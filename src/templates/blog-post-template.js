@@ -21,7 +21,7 @@ const Template = ({ data }) => {
       </div>
       <article className="story-full">
         <h1>{post.Title}</h1>
-        <h5>{post.Date}</h5>
+        <h5>{post.Publication_date}</h5>
         <h5>Written by {post.Author}</h5>
         <div
           dangerouslySetInnerHTML={{
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
         Slug
         Body
         Featured_video
-        Date
+        Publication_date
         Status
         Blurb_SEO_Description
       }

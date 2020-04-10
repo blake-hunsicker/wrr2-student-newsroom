@@ -32,6 +32,9 @@ article.story-promo {
 .story-promo a {
   text-decoration: none;
 }
+.story-promo-text {
+  margin: 0 1rem;
+}
 
 .youtube-video {
   grid-column: 1 / 17;
@@ -54,6 +57,9 @@ article.story-full {
   }
   article.story-promo {
     grid-column: 4 / 14;
+  }
+  .story-promo-text {
+    margin: 0;
   }
   .youtube-video {
     grid-column: 3 / 15;

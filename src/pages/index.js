@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { node } from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { node } from "prop-types"
+
 
 const IndexPage = ({ data }) => {
   const posts = data.allAirtable
@@ -24,11 +25,13 @@ const IndexPage = ({ data }) => {
               allowFullScreen
             ></iframe>
           </div>
-          <Link to={data.Slug}>
-            <h3>{data.Title}</h3>
-            <h5>{data.Date}</h5>
-            <p>{data.Blurb_SEO_Description}</p>
-          </Link>
+          <div className="story-promo-text">
+            <Link to={data.Slug}>
+              <h2>{data.Title}</h2>
+              <h5>{data.Publication_date}</h5>
+              <p>{data.Blurb_SEO_Description}</p>
+            </Link>
+          </div>
         </article>
       ))}
     </Layout>
@@ -44,7 +47,7 @@ export const pageQuery = graphql`
           Slug
           Body
           Featured_video
-          Date
+          Publication_date
           Status
           Blurb_SEO_Description
           Authors {
