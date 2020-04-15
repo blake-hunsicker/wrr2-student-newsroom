@@ -18,7 +18,9 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
 
       <section className="mast">
+
         <h1>Homepage</h1>
+        
       </section>
 
       {posts.nodes.map(({data}, index) => (
@@ -33,7 +35,7 @@ const IndexPage = ({ data }) => {
         />
         
       ))}
-      
+
     </Layout>
 
   )
