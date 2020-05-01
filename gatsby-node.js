@@ -2,19 +2,6 @@ const parseFilepath = require('parse-filepath');
 const path = require('path');
 const slash = require('slash');
 
-// exports.onCreateWebpackConfig = ({ config, stage }) => {
-//   switch (stage) {
-//     case 'develop':
-//       config.preLoader('eslint-loader', {
-//         test: /\.(js|jsx)$/,
-//         exclude: /node_modules/
-//       });
-
-//       break;
-//   }
-//   return config;
-// };
-
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
@@ -29,17 +16,27 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(
-      'src/templates/blog-post-template.js'
+    
+    const textPrimaryTemplate = path.resolve(
+      'src/templates/text-primary.js'
     );
+    const videoPrimaryTemplate = path.resolve(
+      'src/templates/video-primary.js'
+    );
+    const categoryTemplate = path.resolve(
+      'src/templates/category.js'
+    );
+    
     resolve(
       graphql(
         `
           {
-            allAirtable {
+            allAirtable(filter: {data: {Slug: {ne: null}}}) {
               edges {
                 node {
                   data {
+                    Type
+                    Category
                     Slug
                   }
                 }
@@ -48,20 +45,56 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         `
       ).then(result => {
+        
         if (result.error) {
           reject(result.error);
         }
 
         result.data.allAirtable.edges.forEach(edge => {
-          createPage({
-            path: `${edge.node.data.Slug}`,
-            component: slash(blogPostTemplate),
-            context: {
-              slug: edge.node.data.Slug
-            }
-          });
-        });
+          (edge.node.data.Type === 'Video primary') ?
+            createPage({
+              path: `${edge.node.data.Slug}`,
+              component: slash(videoPrimaryTemplate),
+              context: {
+                slug: edge.node.data.Slug,
+                category: edge.node.data.Category
+              }
+            })
+          : (edge.node.data.Type === 'Home') ?
+            createPage({
+              path: `${edge.node.data.Slug}`,
+              component: slash(categoryTemplate),
+              context: {
+                slug: edge.node.data.Slug,
+                category: edge.node.data.Category
+              }
+            })
+          :
+            createPage({
+              path: `${edge.node.data.Slug}`,
+              component: slash(textPrimaryTemplate),
+              context: {
+                slug: edge.node.data.Slug,
+                category: edge.node.data.Category
+              }
+            })
+         }); 
       })
     );
   });
+};
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /mapbox-gl/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 };

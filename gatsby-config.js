@@ -3,6 +3,7 @@ module.exports = {
     title: `Site title`,
     description: `NYU's Studio 20 graduate journalism newsroom`,
     author: `@studio20nyu`,
+    mapboxToken: `pk.eyJ1IjoiYmxha2VodW5zaWNrZXIiLCJhIjoiY2s5MjB4dnNqMDA3dDNrbTBpN3d3M2k2NyJ9.Gr-7FjJNAII4-JmuCu0eIA`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,6 +37,12 @@ module.exports = {
           {
             baseId: `appNluUpWfxwPYpy6`,
             tableName: `All Posts`,
+            createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
+            separateMapType: false,
+          },
+          {
+            baseId: `appNluUpWfxwPYpy6`,
+            tableName: `Surveillance`,
             createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
             separateMapType: false,
           }
