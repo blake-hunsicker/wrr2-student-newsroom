@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,37 +7,21 @@ import HomepageHero from "../components/homepage-hero"
 import ArticlePromo from "../components/article-promo"
 
 
-const IndexPage = ({ data }) => {
-
-  const posts = data.allStories
-  const featuredPost = data.featuredStory
+const Erin2 = () => {
 
   return (
 
     <Layout>
 
-      <SEO title="Home" />
+      <SEO title="Erin2" />
       
-      <HomepageHero
-        featuredStoryImage={featuredPost.data.Featured_image}
-        featuredStoryURL={featuredPost.data.Slug}
-        featuredStoryByline={featuredPost.data.Authors}
-        featuredStoryTitle={featuredPost.data.Title}
-      />
-      
-      <div className="article-promo">
-        {posts.nodes.map(({data}, index) => (
-
-          <ArticlePromo
-            index={index}
-            image={data.Featured_image}
-            slug={data.Slug}
-            title={data.Title}
-            authors={data.Authors}
-          />
-
-        ))}
+      <div class="tabs">
+        <Link to="erin1" className="erin-tab" activeClassName="active">Erin 1</Link>
+        <Link to="erin2" className="erin-tab" activeClassName="active">Erin 2</Link>
       </div>
+
+      <h1>Character 2</h1>
+      
       
     </Layout>
 
@@ -73,4 +57,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default IndexPage
+export default Erin2

@@ -1,20 +1,29 @@
 import React from "react"
+import { Link } from 'gatsby'
 
-const HomepageHero = () => (
+const HomepageHero = ({ featuredStoryImage, featuredStoryURL, featuredStoryByline, featuredStoryTitle }) => (
   <>
     
-    <h2 className="heroMainText">
+    <div className="hero-main-text">
       When life gives you a pandemic, you make good pandemic coverage.
-    </h2>
+    </div>
     
-    <img src="https://cdn.glitch.com/5d4ad69e-6a76-4cac-af1a-39ec786a0062%2FLuke%20homepage.png?v=1587749513127" className="featuredImage" />
-    <h3 className="featuredStoryTitle">
-      Featured Story
-    </h3>
+    <Link className="featured-image-wrapper" to={featuredStoryURL}>
+      <img src={featuredStoryImage} className="featured-image" />
+    </Link>
+
+    <Link className="featured-story-title-wrapper" to={featuredStoryURL}>
+      <h3 className="featured-story-byline">
+        {featuredStoryByline}
+      </h3>
+      <div className="featured-story-title">
+        {featuredStoryTitle}
+      </div>
+    </Link>
     
-    <h3 className="intermissionText">
-      Stories from the disrupted
-    </h3>
+    <div className="intermission-text">
+      stories from the disrupted.
+    </div>
     
   </>
 )

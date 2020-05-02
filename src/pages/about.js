@@ -38,9 +38,6 @@ export const pageQuery = graphql`
       }
     }
   }
-  fragment image on AirtableDataFeatured_image {
-    thumbnails { full { url } }
-  }
 `;
 
 export default AboutPage

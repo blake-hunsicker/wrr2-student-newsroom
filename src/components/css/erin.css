@@ -1,0 +1,18 @@
+.tabs {
+  grid-column: 2 / 16;
+  text-align: center;
+  margin-bottom: 4rem;
+  border-radius: 8px;
+  /* border: 2px solid #3F826D; */
+}
+.erin-tab {
+  padding: 0.6rem 1rem;
+  background: #3F826D;
+}
+.active {
+  color: white;
+}
+h1 {
+  grid-column: 2 / 16;
+  text-align: center;
+}

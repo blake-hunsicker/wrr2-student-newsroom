@@ -5,20 +5,12 @@ export default props => (
   <article className="story-promo" key={props.index}>
     <div className="story-promo-text">
       <Link to={props.slug}>
-        <h4>{props.authors}</h4>
-        <h2>{props.title}</h2>
-        <h5>{props.publication_date}</h5>
-        <p>{props.blurb}</p>
+        <h3>{props.authors}</h3>
+        <h1>{props.title}</h1>
       </Link>
     </div>
-    <div className="youtube-video">
-      <iframe
-        src={props.video}
-        title={props.index}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+    <div className="story-promo-image-wrapper">
+      <img src={props.image} className="story-promo-image" />
     </div>
   </article>
 )

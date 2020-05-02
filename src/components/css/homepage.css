@@ -1,0 +1,125 @@
+/* Homepage Hero Section */
+
+.hero-main-text {
+  grid-column: 2 / 7;
+  grid-row: 1 / 2;
+  font-size: 2.4rem;
+  padding-top: 2rem;
+}
+
+.featured-story-title-wrapper {
+  grid-column: 7 / 14;
+  grid-row: 2;
+}
+.featured-story-title-wrapper:hover .featured-story-title {
+  text-decoration: underline;
+}
+
+.featured-story-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #50806E;
+  mix-blend-mode: difference;
+  text-transform: uppercase;
+}
+.featured-story-byline {
+  /* font-size: 1rem; */
+  font-family: Merriweather;
+  color: #000;
+}
+
+.featured-image-wrapper {
+  grid-column: 10 / 17;
+  grid-row: 1 / 3;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;
+}
+.featured-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.25s;
+}
+.featured-image-wrapper:hover .featured-image {
+  transform: scale(1.1);
+  transition: transform 0.25s;
+}
+
+.intermission-text {
+  grid-column: 2 / 16;
+  color: #5C3C3B;
+  font-family: Merriweather;
+  font-weight: default;
+  font-size: 3.2rem;
+  padding-top: 4rem;
+  
+}
+
+/* Homepage Article Promos */
+
+.article-promo {
+  grid-column: 1 / 17;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 0.4rem;
+  grid-row-gap: 0.4rem;
+  margin-top: 4rem;
+
+}
+article.story-promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+article.story-promo:nth-child(1) {
+  grid-column: 2 / 6;
+}
+article.story-promo:nth-child(2) {
+  grid-column: 7 / 11;
+}
+article.story-promo:nth-child(3) {
+  grid-column: 12 / 16;
+}
+.story-promo a {
+  text-decoration: none;
+}
+
+.story-promo-text {
+  font-family: Tamil MN;
+  margin: 0;
+}
+.story-promo-text h4 {
+  /* font-size: 22px; */
+}
+.story-promo-text h1 {
+  font-size: 2rem;
+  color: #CFA196;
+  /* mix-blend-mode: difference; */
+  text-transform: uppercase;
+}
+.story-promo-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  margin-left: 40%;
+  padding-top: 75%;
+}
+.story-promo-image {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.story-promo-image-wrapper:hover .story-promo-image {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}

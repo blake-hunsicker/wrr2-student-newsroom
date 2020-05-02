@@ -1,0 +1,80 @@
+/* Category page hero */
+
+.category-hero-image {
+  grid-column: 1 / 8;
+  grid-row: 3 / 5;
+  width: 100%;
+}
+
+.category-hero-mini-subhed {
+  font-family: News Cycle;
+  font-size: 1.4rem;
+  grid-column: 9 / 11;
+/*   grid-column: 2 / 12; */
+  grid-row: 2 / 4;
+}
+
+.category-hero-links {
+  font-family: News Cycle;
+  font-size: 1.4rem;
+  grid-column: 12 / 14;
+  grid-row: 2 / 4;
+}
+.category-hero-links p {
+  margin: 0;
+}
+
+.category-hero-large-subhed {
+  grid-column: 9 / 14;
+  grid-row: 4 / 6;
+}
+
+/* Category page story promo*/
+
+.category-promo {
+  grid-column: 1 / 17;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 0.4rem;
+  grid-row-gap: 0.4rem;
+}
+
+.category-promo .left {
+  grid-column: 3 / 9;
+}
+.category-promo .right {
+  grid-column: 10 / 17;
+}
+
+.category-promo-text {
+  grid-column: 3 / 9;
+}
+.category-promo-title {
+  font-family: Merriweather;
+  font-size: 2.8rem;
+  color: rgba(0,0,0,0);
+  -webkit-text-fill-color: #FFE8D1;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  margin-bottom: 1rem;
+}
+.category-promo-blurb {
+  font-family: News Cycle;
+}
+.category-promo-image {
+  grid-column: 10 / 17;
+}
+.category-promo-image img {
+  width: 100%;
+}
+.category-recirc {
+  font-family: Merriweather;
+  font-weight: bold;
+  font-size: 2rem;
+  grid-column: 2 / 16;
+  display: flex;
+  justify-content: space-around;
+  
+  text-align: center;
+  margin-top: 4rem;
+}
