@@ -20,7 +20,7 @@ const Erin2 = () => {
         <Link to="erin2" className="erin-tab" activeClassName="active">Erin 2</Link>
       </div>
 
-      <h1>Character 2</h1>
+      <h1 className="Erin">Character 2</h1>
       
       
     </Layout>

@@ -24,15 +24,15 @@ const Template = ({ data }) => {
         src="https://cdn.glitch.com/5d4ad69e-6a76-4cac-af1a-39ec786a0062%2Fhawaii1.jpg?v=1587843662463"
       />
 
-      <div className="category-hero-mini-subhed">
+      <h4 className="category-hero-mini-subhed">
         {home.Blurb}
-      </div>
+      </h4>
 
       <div className="category-hero-links">
-        <h4>Stories</h4>
+        <h4 className="category-hero-links-label">Stories</h4>
         {posts.nodes.map(({data}, index) => (
           <Link to={data.Slug}>
-            <p>{data.Title}</p>
+            <h4>{data.Title}</h4>
           </Link>
         ))}
       </div>
@@ -52,23 +52,38 @@ const Template = ({ data }) => {
       <div className="top-line"></div>
       
       {posts.nodes.map(({data}, index) => (
-        <div className="category-promo">
-          <div className="category-promo-text">
-
-            <h1 className="category-promo-title">{data.Title}</h1>
-
-            <h2 className="categoryPromoByline">{data.Authors}</h2>
-
-            <div className="category-promo-blurb">
-              {data.Blurb}
+        (index == 0 || index == 2) ?
+          <Link className="category-promo" to={data.Slug}>
+            <div className="category-promo-text left">
+              <h2 className="category-promo-title">{data.Title}</h2>
+              <h5 className="category-promo-byline">{data.Authors}</h5>
+              <p className="category-promo-blurb">
+                {data.Blurb}
+              </p>
             </div>
-          </div>
-          <div className="category-promo-image">
+            <div className="category-promo-image-wrapper right">
+              <img
+                className="category-promo-image"
+                src={data.Featured_image}
+              />
+            </div>
+          </Link>
+        :
+        <Link className="category-promo" to={data.Slug}>
+          <div className="category-promo-image-wrapper left">
             <img
-              src="https://cdn.glitch.com/5d4ad69e-6a76-4cac-af1a-39ec786a0062%2Fstory.jpg?v=1587850611344"
+              className="category-promo-image"
+              src={data.Featured_image}
             />
           </div>
-        </div>
+          <div className="category-promo-text right">
+            <h2 className="category-promo-title">{data.Title}</h2>
+            <h5 className="category-promo-byline">{data.Authors}</h5>
+            <p className="category-promo-blurb">
+              {data.Blurb}
+            </p>
+          </div>
+        </Link>
       ))}
       
       <CategoryPageRecirc />
@@ -112,6 +127,7 @@ export const pageQuery = graphql`
           Authors
           Type
           Category
+          Featured_image
           Slug
         }
       }

@@ -12,7 +12,7 @@
 .active {
   color: white;
 }
-h1 {
+h1.erin {
   grid-column: 2 / 16;
   text-align: center;
 }

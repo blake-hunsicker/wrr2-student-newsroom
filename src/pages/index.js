@@ -62,7 +62,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    featuredStory: airtable(data: {Authors: {eq: "Felipe Léon"}}) {
+    featuredStory: airtable(data: {Authors: {eq: "Ike Wilson"}}) {
       data {
         Title
         Authors
