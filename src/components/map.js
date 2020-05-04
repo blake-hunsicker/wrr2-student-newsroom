@@ -21,6 +21,9 @@ class ChinaMap extends React.Component {
     };
   }
   componentDidMount() {
+    // const config = this.props;
+    // const mapStart = config.chapters[0].location;
+
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/blakehunsicker/ck9lnkp671zb81ipnp08n6ims',
@@ -72,7 +75,10 @@ class ChinaMap extends React.Component {
   
   render() {
     return (
+      <>
         <div ref={el => this.mapContainer = el} />
+        
+      </>
     )
   }
 }

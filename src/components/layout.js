@@ -11,6 +11,7 @@ import './css/category.css';
 import './css/homepage.css';
 import './css/about.css';
 import './css/article.css';
+import './css/map.css';
 import './css/erin.css';
 
 const Layout = ({ children, page }) => {
