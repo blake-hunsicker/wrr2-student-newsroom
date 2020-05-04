@@ -22,7 +22,7 @@ const Template = ({ data }) => {
       />
       
       <div
-        className="textPostBlurb"
+        className="text-post-blurb"
         dangerouslySetInnerHTML={{
           __html: unified()
             .use(markdown)
@@ -37,7 +37,7 @@ const Template = ({ data }) => {
       />
       
       <div
-        className="textPostBody"
+        className="text-post-body"
         dangerouslySetInnerHTML={{
           __html: unified()
             .use(markdown)

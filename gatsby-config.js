@@ -45,6 +45,12 @@ module.exports = {
             tableName: `Surveillance`,
             createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
             separateMapType: false,
+          },
+          {
+            baseId: `appNluUpWfxwPYpy6`,
+            tableName: `Authors`,
+            createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
+            separateMapType: false,
           }
         ]
       }

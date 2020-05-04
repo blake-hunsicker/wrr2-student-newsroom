@@ -2,16 +2,16 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const PostPageTitle = ({link, type, title, authors}) => (
-  <div className="postPageTitle">
+  <div className="post-page-title">
     <Link to={link}>
-      <h3 className="postPageType">
+      <h4 className="post-page-type">
         {type}
-      </h3>
+      </h4>
     </Link>
-    <h1 className="postPageTitleText">
+    <h1 className="post-page-title-text">
       {title}
     </h1>
-    <h1 className="postPageByline">
+    <h1 className="post-page-byline">
       A story by {authors}
     </h1>
   </div>

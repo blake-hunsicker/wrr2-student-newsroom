@@ -32,6 +32,9 @@
   grid-row: 4 / 6;
 }
 
+.category-hero-large-subhed h2 {
+  font-size: 1.6rem;
+}
 /* Category page story promo*/
 
 .category-promo {
@@ -51,7 +54,7 @@
   grid-column: 2 / 9;
 }
 .category-promo-text.right {
-  grid-column: 8 / 16;
+  grid-column: 9 / 16;
 }
 .category-promo-title {
   font-family: Merriweather;
@@ -84,7 +87,7 @@
   padding-top: 75%;
 }
 .category-promo-image-wrapper.left {
-  grid-column: 1 / 7;
+  grid-column: 1 / 8;
 }
 .category-promo-image-wrapper.right {
   grid-column: 10 / 17;
@@ -109,4 +112,118 @@
   
   text-align: center;
   margin-top: 4rem;
+}
+
+.category-promo {
+  margin-top: 4rem;
+}
+
+@media (max-width: 767px) {
+
+  .category-hero-image {
+    grid-column: 1 / 17;
+    grid-row: 2 / 4;
+  }
+
+  .category-hero-mini-subhed {
+    grid-column: 2 / 16;
+    grid-row: 7;
+    display: none;
+  }
+
+  .category-hero-links {
+    grid-column: 2 / 16;
+    grid-row: 5;
+    display: none;
+  }
+
+  .category-hero-large-subhed {
+    grid-column: 2 / 16;
+    grid-row: 4;
+  }
+
+  .category-promo {
+    margin: 2rem 0;
+  }
+
+  .category-promo-text.left,
+  .category-promo-text.right {
+    grid-column: 2 / 16;
+    grid-row: 1 / 3;
+    z-index: 1;
+  }
+  .category-promo-text.left {
+    text-align: left;
+  }
+  .category-promo-text.right {
+    text-align: right;
+  }
+  .category-promo-text .category-promo-title {
+    font-family: Tamil MN;
+    -webkit-text-stroke-width: 0;
+    -webkit-text-stroke-color: none;
+    color: #50806E;
+    mix-blend-mode: difference;
+  }
+
+  .category-promo-image-wrapper.left,
+  .category-promo-image-wrapper.right {
+    grid-row: 1 / 4;
+  }
+
+  .category-promo-image-wrapper.left {
+    grid-column: 1 / 10;
+  }
+  .category-promo-image-wrapper.right {
+    grid-column: 7 / 17;
+  }
+
+  .category-promo-blurb {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .category-hero-image {
+    grid-column: 1 / 17;
+    grid-row: 2 / 4;
+  }
+
+  .category-hero-mini-subhed {
+    grid-column: 2 / 16;
+    grid-row: 7;
+    display: none;
+  }
+
+  .category-hero-links {
+    grid-column: 2 / 16;
+    grid-row: 5;
+    display: none;
+  }
+
+  .category-hero-large-subhed {
+    grid-column: 2 / 16;
+    grid-row: 4;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1339px) {
+  .category-hero-image {
+    grid-column: 1 / 10;
+    grid-row: 2 / 6;
+  }
+  .category-hero-links {
+    grid-column: 11 / 16;
+    grid-row: 2 / 4;
+  }
+  .category-hero-mini-subhed {
+    grid-column: 11 / 16;
+    grid-row: 5;
+    display: none;
+  }
+  .category-hero-large-subhed {
+    grid-column: 2 / 16;
+    grid-row: 6;
+    margin: 2rem 0;
+  }
 }

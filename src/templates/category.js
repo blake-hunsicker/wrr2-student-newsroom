@@ -37,9 +37,9 @@ const Template = ({ data }) => {
         ))}
       </div>
 
-      <h2 className="category-hero-large-subhed">
+      {/* <h2 className="category-hero-large-subhed"> */}
         <div
-          className="textPostBlurb"
+          className="category-hero-large-subhed"
           dangerouslySetInnerHTML={{
             __html: unified()
               .use(markdown)
@@ -47,9 +47,9 @@ const Template = ({ data }) => {
               .processSync(home.Body)
           }}
         />
-      </h2>
+      {/* </h2> */}
 
-      <div className="top-line"></div>
+      {/* <div className="top-line"></div> */}
       
       {posts.nodes.map(({data}, index) => (
         (index == 0 || index == 2) ?
@@ -57,9 +57,15 @@ const Template = ({ data }) => {
             <div className="category-promo-text left">
               <h2 className="category-promo-title">{data.Title}</h2>
               <h5 className="category-promo-byline">{data.Authors}</h5>
-              <p className="category-promo-blurb">
-                {data.Blurb}
-              </p>
+              <div
+                className="category-promo-blurb"
+                dangerouslySetInnerHTML={{
+                  __html: unified()
+                    .use(markdown)
+                    .use(html)
+                    .processSync(home.Blurb)
+                }}
+              />
             </div>
             <div className="category-promo-image-wrapper right">
               <img
@@ -79,9 +85,15 @@ const Template = ({ data }) => {
           <div className="category-promo-text right">
             <h2 className="category-promo-title">{data.Title}</h2>
             <h5 className="category-promo-byline">{data.Authors}</h5>
-            <p className="category-promo-blurb">
-              {data.Blurb}
-            </p>
+            <div
+              className="category-promo-blurb"
+              dangerouslySetInnerHTML={{
+                __html: unified()
+                  .use(markdown)
+                  .use(html)
+                  .processSync(home.Blurb)
+              }}
+            />
           </div>
         </Link>
       ))}

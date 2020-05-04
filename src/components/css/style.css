@@ -15,7 +15,7 @@ main {
   grid-template-columns: repeat(16, 1fr);
   grid-column-gap: 0.4rem;
   grid-row-gap: 0.4rem;
-  margin: 6rem 0;
+  margin: 4rem 0;
 }
 
 h1 {
@@ -35,6 +35,11 @@ h4 {
 h5 {
   font-size: 1.2rem;
   font-family: Merriweather;
+}
+
+p {
+  font-family: News Cycle;
+  font-size: 1.2rem;
 }
 
 /* Page color sets */
@@ -188,17 +193,6 @@ li {
   height: 100%;
 }
 
-/* Post page text hero */
-
-.postVideoHeroMainText {
-  
-}
-.postVideoFeaturedImage {
-  
-}
-.postVideoIntermissionText {
-  
-}
 
 /* Post page recirc */
 
@@ -210,95 +204,6 @@ li {
   margin: 4rem 0;
 }
 
-
-/* Video post body */
-
-.videoPostBody {
-  grid-column: 1 / 17;
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-column-gap: 0.4rem;
-  grid-row-gap: 0.4rem; 
-  font-family: News Cycle;
-  font-size: 1.2rem;
-}
-.videoPostBody p {
-  grid-column: 2 / 8;
-}
-
-.videoPostBody blockquote {
-  grid-column: 10 / 14;
-  grid-row: span 2;
-}
-
-.videoPostBody p:nth-child(6),
-.videoPostBody p:nth-child(7),
-.videoPostBody p:nth-child(8),
-.videoPostBody p:nth-child(9),
-.videoPostBody p:nth-child(10) {
-/*   text-align: right; */
-}
-
-/* Text post body */
-
-.textPostBlurb {
-  grid-column: 9 / 15;
-  grid-row: 2 / 4;
-  font-weight: 700;
-  font-size: 1.6rem;
-}
-
-.textPostHeroImage {
-  grid-column: 1 / 8;
-  grid-row: 3 / 5;
-  width: 100%;
-}
-
-.textPostBody {
-  grid-column: 9 / 15;
-  grid-row: 4 / 8;
-  font-family: News Cycle;
-  font-size: 1.2rem;
-}
-
-.textPostBody blockquote {
-  position: absolute;
-  left: 4rem;
-  width: 200px;
-}
-
-.textPostFullBleedImage {
-  grid-column: 1 / 17;
-  width: 100%;
-}
-
-
-/* Pull quotes */
-
-blockquote p {
-  font-family: Merriweather;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.post-quote-mini {
-  grid-column: 13 / 15;
-  font-weight: bold;
-}
-
-.post-quote-large {
-  grid-column: 13 / 15;
-}
-.post-quote-large h3 {
-  font-family: Merriweather;
-  color: rgba(0,0,0,0);
-  -webkit-text-fill-color: #FFE8D1;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
-}
-.post-quote-large h2 {
-  font-family: "Tamil MN";
-}
 
 
 /* Responsive */
@@ -324,9 +229,14 @@ blockquote p {
     font-size: 1rem;
   }
 
-  .youtube-video {
-/*     grid-column: 4 /6; */
+  .secondary-page-title {
+    grid-row: 1;
+    margin: 0;
+    /* color: #50806E;
+    mix-blend-mode: difference;
+    text-transform: uppercase; */
   }
+
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {}

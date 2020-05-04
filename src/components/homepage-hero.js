@@ -21,9 +21,9 @@ const HomepageHero = ({ featuredStoryImage, featuredStoryURL, featuredStoryBylin
       </h1>
     </Link>
     
-    <h2 className="intermission-text">
-      stories from the disrupted.
-    </h2>
+    <h3 className="intermission-text">
+      Stories from the disrupted.
+    </h3>
     
   </>
 )

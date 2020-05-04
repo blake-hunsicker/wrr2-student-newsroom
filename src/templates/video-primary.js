@@ -34,7 +34,17 @@ const Template = ({ data }) => {
     </div>
 
     <div
-      className="videoPostBody"
+      className="video-post-blurb"
+      dangerouslySetInnerHTML={{
+        __html: unified()
+          .use(markdown)
+          .use(html)
+          .processSync(post.Blurb)
+      }}
+    />
+
+    <div
+      className="video-post-body"
       dangerouslySetInnerHTML={{
         __html: unified()
           .use(markdown)

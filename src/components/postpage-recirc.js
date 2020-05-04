@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'gatsby'
 
 const PostPageRecirc = ({prevStoryURL, prevStory, nextStoryURL, nextStory}) => (
-  <div className="postPageRecirc">
+  <div className="post-page-recirc">
     <h3 className="previous">
       <Link to={prevStoryURL}>
         👈 {prevStory}
