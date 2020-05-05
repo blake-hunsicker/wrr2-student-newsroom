@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
 
   return (
 
-    <Layout>
+    <Layout page='light'>
 
       <SEO title="Home" />
       

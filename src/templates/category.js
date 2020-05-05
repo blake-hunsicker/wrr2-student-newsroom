@@ -15,7 +15,7 @@ const Template = ({ data }) => {
   const posts = data.allAirtable
   
   return (
-    <Layout>
+    <Layout page={home.Slug}>
       
       <SecondaryPageTitle title={home.Title} />
       

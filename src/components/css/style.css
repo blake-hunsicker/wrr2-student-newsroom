@@ -15,7 +15,15 @@ main {
   grid-template-columns: repeat(16, 1fr);
   grid-column-gap: 0.4rem;
   grid-row-gap: 0.4rem;
-  margin: 4rem 0;
+  margin: 4rem 0 8rem;
+}
+
+footer {
+  color: #777;
+  padding: auto 2rem 0;
+}
+footer a {
+  text-decoration: underline;
 }
 
 h1 {
@@ -43,13 +51,23 @@ p {
 }
 
 /* Page color sets */
-
-.about {
+.about, .coping, .uplifting, .innovating, .making-money {
   color: #FFE8D1;
+}
+.about {
   background: #50806E;
 }
-.about .mainText {
-  color: #FFE8D1;
+.coping {
+  background: #5C3C3B;
+}
+.uplifting {
+  background: #2D3D8B;
+}
+.innovating {
+  background: #565E73;
+}
+.making-money {
+  background: #50806E;
 }
 
 /* Labels, etc. */
@@ -79,28 +97,39 @@ p {
 
 /* Navbar */
 
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  border-bottom: solid 1px black; 
+nav {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 0.4rem;
+  grid-row-gap: 0.4rem;
+  color: #5C3C3B;
+  border-bottom: solid 1px #111; 
 }
-.vertical-line {
-  border-right: solid 1px black;
-  padding-right: 50px;
-  height: 100%;
+.hamburger {
+  display: none;
+}
+.about nav,
+.coping nav,
+.uplifting nav,
+.innovating nav,
+.making-money nav {
+  color: #FFE8D1;
 }
 .logo {
-  color: #535374;
-  font-size: 20px;
+  grid-column: 2 / 4;
+  padding: 0.4rem;
+  border-right: solid 1px black;
+}
+.logo img {
+  height: 4rem;
 }
 
-.headings {
+.sections {
+  grid-column: 4 / 16;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
   letter-spacing: 1px;
-  color: #543333;
   }
 a:link {
     text-decoration: none; 
@@ -109,30 +138,6 @@ li {
   display: inline-block;
   padding: 8px;
 }
-
-/* About Page */
-
-.p-1 {
-  font-size: 2rem;
-  grid-column: 2 / 12;
-  margin-bottom: 4rem;
-}
-.Meet_team {
-  color: #EEEBD0;
-  font-size: 2rem;
-  text-align: center;
-  grid-column: 12 / 16;
-  max-height: 60px;
-  margin: 1rem 0;
-  padding: 1rem;
-  background: #5c3c3b;
-}
-
-.summary {
-  grid-column: 4 / 14;
-}
-
-
 
 /* Post page */
 
@@ -205,6 +210,29 @@ li {
     font-size: 1rem;
   }
 
+  .logo {
+    grid-column: 2 / 8;
+    border-right: none;
+  }
+  .hamburger {
+    display: block;
+    grid-column: 10 / 16;
+    text-align: right;
+  }
+  .sections {
+    grid-column: 2 / 16;
+    display: block;
+  }
+  .sections li {
+    display: block;
+  }
+  .sections ul.hide {
+    display: none;
+  }
+  .sections ul.show {
+    /* display: none; */
+  }
+
   .secondary-page-title {
     grid-row: 1;
     margin: 0;
@@ -212,10 +240,7 @@ li {
     mix-blend-mode: difference;
     text-transform: uppercase; */
   }
-
 }
-
-@media (min-width: 600px) and (max-width: 1023px) {}
 
 @media (min-width: 1024px){}
 

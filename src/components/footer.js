@@ -1,11 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 
 const Footer = () => (
   <footer>
-    <h5>
-      Made in 2020 by <Link to="/">Studio 20</Link>
-    </h5>
+    <p>
+      Made by NYU's <a href="https://journalism.nyu.edu/graduate/programs/studio-20-digital-first/" target="_blank">Studio 20</a> graduate journalism program.
+    </p>
   </footer>
 )
 
