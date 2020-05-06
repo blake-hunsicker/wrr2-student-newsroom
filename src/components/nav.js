@@ -9,7 +9,7 @@ class Nav extends React.Component {
     super(props);
     this.toggleSections= this.toggleSections.bind(this);
     this.state = {
-      showSections: true
+      showSections: false
     }
   }
 
@@ -36,7 +36,7 @@ class Nav extends React.Component {
           <FontAwesomeIcon icon={faBars} />
         </div>
         <div className="sections">
-          <ul className={`${ this.state.showSections ? "show" : "hide"}`}>
+          <ul className={`${ this.state.showSections ? "hide" : "show"}`}>
             <li>
               <Link
                 to="/about"

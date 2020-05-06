@@ -18,25 +18,10 @@
   grid-column-gap: 0.4rem;
   grid-row-gap: 0.4rem;
 }
-#timeline-1,
-#timeline-2,
-#timeline-3,
-#timeline-4,
-#timeline-5,
-#timeline-6,
-#timeline-7,
-#timeline-8,
-#timeline-9,
-#timeline-10,
-#timeline-11,
-#timeline-12,
-#timeline-13,
-#timeline-14,
-#timeline-15 {
+.timeline {
   grid-column: 11 / 17;
 }
-#story-1,
-#story-2 {
+.story {
   grid-column: 3 / 8;
   z-index: 1;
   background: white;
