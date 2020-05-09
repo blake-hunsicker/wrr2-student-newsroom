@@ -50,12 +50,41 @@ p {
   font-size: 1.2rem;
 }
 
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background: rgba(0, 0, 0, 0.5)!important;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  top: 5vh!important;
+  right: 20vw!important;
+  left: 20vw!important;
+  bottom: 5vh!important;
+  background: #2D3D8B!important;
+  border: none!important;
+}
+
+.ReactModal__Content::-webkit-scrollbar {
+  display: none;
+}
+
+.ReactModal__Content .secondary-page-title {
+  text-align: center;
+}
+
+
 /* Page color sets */
-.about, .coping, .uplifting, .innovating, .making-money {
+.about, .author, .coping, .uplifting, .innovating, .making-money {
   color: #FFE8D1;
 }
 .about {
   background: #50806E;
+}
+.author {
+  background: #2D3D8B;
 }
 .coping {
   background: #5C3C3B;
@@ -210,6 +239,15 @@ li {
     font-size: 1rem;
   }
 
+  .ReactModal__Content.ReactModal__Content--after-open {
+    top: 5vh!important;
+    right: 0!important;
+    left: 0!important;
+    bottom: 0!important;
+    background: #2D3D8B!important;
+    border: none!important;
+  }
+
   .logo {
     grid-column: 2 / 8;
     border-right: none;
@@ -218,19 +256,28 @@ li {
     display: block;
     grid-column: 10 / 16;
     text-align: right;
+    margin: auto 0;
+  }
+  .hamburger:hover {
+    cursor: pointer;
   }
   .sections {
     grid-column: 2 / 16;
     display: block;
   }
-  .sections li {
-    display: block;
+  .sections ul {
+    margin: 0 0 1rem;
   }
   .sections ul.hide {
     display: none;
   }
   .sections ul.show {
     /* display: none; */
+  }
+  .sections li {
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
   }
 
   .secondary-page-title {
@@ -242,7 +289,11 @@ li {
   }
 }
 
-@media (min-width: 1024px){}
+@media (max-width: 1024px){
+  .logo {
+    border-right: none;
+  }
+}
 
 @media (min-width: 1024px) and (max-width: 1439px){}
 

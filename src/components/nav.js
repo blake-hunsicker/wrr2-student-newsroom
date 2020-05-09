@@ -1,5 +1,5 @@
-import { Link, graphql } from "gatsby"
 import React from "react"
+import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -36,45 +36,30 @@ class Nav extends React.Component {
           <FontAwesomeIcon icon={faBars} />
         </div>
         <div className="sections">
-          <ul className={`${ this.state.showSections ? "hide" : "show"}`}>
+          <ul className={`${ this.state.showSections === false ? "hide" : "show"}`}>
             <li>
-              <Link
-                to="/about"
-                activeClass="active-section"
-              >
-                about
+              <Link to="/about">
+                About
               </Link>
             </li>
             <li>
-              <Link
-                to="/coping"
-                activeClass="active-section"
-              >
-                coping
+              <Link to="/coping">
+                Coping
               </Link>
             </li>
             <li>
-              <Link
-                to="/uplifting"
-                activeClass="active-section"
-              >
-                uplifting
+              <Link to="/uplifting">
+                Uplifting
               </Link>
             </li>
             <li>
-              <Link
-                to="/innovating"
-                activeClass="active-section"
-              >
-                innovating
+              <Link to="/innovating">
+                Innovating
               </Link>
             </li>
             <li>
-              <Link
-                to="/making-money"
-                activeClass="active-section"
-              >
-                making money
+              <Link to="/making-money">
+                Making Money
               </Link>
             </li>
           </ul>
@@ -84,41 +69,5 @@ class Nav extends React.Component {
     )
   }
 }
-
-// const Nav = ({children}) => (
-//   <nav>
-//     <div className="logo">
-//       <Link
-//         to='/'
-//       >
-//         {children}  
-//       </Link>
-//     </div>
-//     <div className="sections">
-//       <ul>
-//         <li><Link to="/about">about</Link></li>
-//         <li><Link to="/coping">coping</Link></li>
-//         <li><Link to="/uplifting">uplifting</Link></li>
-//         <li><Link to="/innovating">innovating</Link></li>
-//         <li><Link to="/making-money">making money</Link></li>
-//       </ul>
-//       <div className="hamburger" onClick="toggleMenu()">
-//         🗺
-//       </div>
-//     </div>
-//   </nav>
-// )
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "./images/logo.svg" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 export default Nav

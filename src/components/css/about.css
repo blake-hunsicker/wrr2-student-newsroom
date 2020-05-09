@@ -30,7 +30,7 @@
 .team-cards {
   grid-column: 2 / 16;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 4rem;
   grid-row-gap: 4rem;
 }
@@ -45,7 +45,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding-top: 133.33%;
+  padding-top: 100%;
 }
 .author-image-wrapper img {
   position: absolute;
@@ -57,12 +57,14 @@
 }
 
 .author-name {
-  text-align: right;
+  text-align: center;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-.author-role {
-  text-align: right;
+p.author-role {
+  /* text-align: right; */
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {

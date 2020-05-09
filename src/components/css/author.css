@@ -1,0 +1,42 @@
+.author .secondary-page-title {
+  grid-column: 2 / 16;
+}
+
+.author-page-image-wrapper {
+  grid-column: 4 / 14;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;
+}
+.author-page-image-wrapper img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.author-label {
+  font-weight: 400;
+}
+.author-role {
+  grid-column: 4 / 14;
+  text-align: center;
+}
+.social {
+  grid-column: 4 / 14;
+  display: flex;
+}
+.social-pill {
+  background: rgba(0,0,0,0.5);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  margin-right: 1rem;
+}
+.social-pill:hover {
+  background: rgba(0,0,0,0.2);
+}
+.author-bio {
+  grid-column: 4 / 14;
+}

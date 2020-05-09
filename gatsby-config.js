@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Site title`,
-    description: `NYU's Studio 20 graduate journalism newsroom`,
+    title: `Paused`,
+    description: `Stories about the global impacts of the COVID-19 pandemic, told by Journalism graduate students from the Studio 20 - Digital First program at the New York University. Stories about how people around the world are coping with the coronavirus situation, innovating and finding new ways of dealing with the stress, the anxiety and other hardships of these times.`,
     author: `@studio20nyu`,
     mapboxToken: `pk.eyJ1IjoiYmxha2VodW5zaWNrZXIiLCJhIjoiY2s5MjB4dnNqMDA3dDNrbTBpN3d3M2k2NyJ9.Gr-7FjJNAII4-JmuCu0eIA`
   },
@@ -25,9 +25,10 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-modal-routing`,
     {
       resolve: `gatsby-source-airtable`,
       options: {

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -33,23 +33,26 @@ const AboutPage = ({ data }) => {
       
       <AboutTeamGrid>
         {authors.nodes.map(({data}, index) => (
-          <a
+          <Link
             className="author-card"
-            href={data.Site}
-            target="_blank"
+            to={data.Slug}
+            state={{
+              modal: true,
+              noScroll: true
+            }}
           >
             <div className="author-image-wrapper">
               <img
-                src={data.Author_image}
+                src={data.Author_image[0].url}
               />
             </div>
-            <h3 className="author-name">
+            <h4 className="author-name">
               {data.Name}
-            </h3>
+            </h4>
             <p className="author-role">
               {data.Roles}
             </p>
-          </a> 
+          </Link> 
         ))}
       </AboutTeamGrid>
             
@@ -64,9 +67,11 @@ export const pageQuery = graphql`
       nodes {
         data {
           Name
-          Author_image
+          Author_image {
+            url
+          }
           Roles
-          Site
+          Slug
         }
       }
     }
