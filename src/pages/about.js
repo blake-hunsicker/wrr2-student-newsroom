@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
       <SEO
         title='About | Paused'
         description='Stories about the global impacts of the COVID-19 pandemic, told by Journalism graduate students from the Studio 20 - Digital First program at the New York University. Stories about how people around the world are coping with the coronavirus situation, innovating and finding new ways of dealing with the stress, the anxiety and other hardships of these times.'
-        image={ZoomImage}
+        image='https://wrr2-student-newsroom.netlify.app/static/zoom-d33e3af113c7eba831c0df3f5083e372.jpg'
       />
       
       <SecondaryPageTitle title="About" />

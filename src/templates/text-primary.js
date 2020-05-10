@@ -79,6 +79,7 @@ export const pageQuery = graphql`
         Slug
         Body
         Featured_video
+        Featured_image
         Publication_date
         Status
         Blurb

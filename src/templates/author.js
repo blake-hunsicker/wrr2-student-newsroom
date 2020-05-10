@@ -24,7 +24,7 @@ const Author = ({data}) => {
             <ModalLayout page='author'>
 
               <SEO
-                title={`${authors.Title} | Paused`}
+                title={`${authors.Name} | Paused`}
                 description={authors.Bio}
                 image={authors.Author_image[0].url}
               />
@@ -93,7 +93,7 @@ const Author = ({data}) => {
             <Layout page='author'>
               
               <SEO
-                title={`${authors.Title} | Paused`}
+                title={`${authors.Name} | Paused`}
                 description={authors.Bio}
                 image={authors.Author_image[0].url}
               />
