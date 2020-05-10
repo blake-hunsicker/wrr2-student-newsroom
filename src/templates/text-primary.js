@@ -50,13 +50,12 @@ const Template = ({ data }) => {
         }}
       />
       
-      <PostPageRecirc
+      {/* <PostPageRecirc
         prevStoryURL = '/'
         prevStory = 'Prev'
         nextStoryURL = '/'
         nextStory = 'Next'
-      />
-      
+      /> */}
       
     </Layout>
   );

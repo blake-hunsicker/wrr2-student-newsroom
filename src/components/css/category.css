@@ -140,6 +140,13 @@
     margin: 2rem 0;
   }
 
+  .category-promo-text {
+    mix-blend-mode: difference;
+  }
+  .category-promo-byline {
+    display: none;
+  }
+
   .category-promo-text.left,
   .category-promo-text.right {
     grid-column: 2 / 16;

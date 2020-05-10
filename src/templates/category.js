@@ -99,7 +99,7 @@ const Template = ({ data }) => {
         </Link>
       ))}
       
-      <CategoryPageRecirc/>
+      {/* <CategoryPageRecirc /> */}
       
     </Layout>
   );

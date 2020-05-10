@@ -76,10 +76,11 @@
 
 .story-promo-text {
   margin: 0;
+  /* mix-blend-mode: difference; */
 }
 .story-promo-text h4 {
 }
-.story-promo-text h3 {
+.story-promo-title {
   font-family: Tamil MN;
   color: #50806E;
   mix-blend-mode: difference;
@@ -150,10 +151,16 @@
     grid-column: 2 / 16;
     grid-row: 1 / 3;
     z-index: 1;
+    mix-blend-mode: difference;
+  }
+  .story-promo-byline {
+    display: none;
   }
 
   .story-promo .story-promo-text h3 {
     font-size: 44px;
+    color: #50806E;
+    mix-blend-mode: difference;
   }
 
   .story-promo:nth-child(1) .story-promo-text,

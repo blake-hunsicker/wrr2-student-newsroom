@@ -16,7 +16,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 //   </div>
 // )
 
-const Categories = () => {
+const Categories = ({currSlug}) => {
 
   const data = useStaticQuery(graphql`
     query Categories {
@@ -38,18 +38,16 @@ const Categories = () => {
     }
   `)
 
-  console.log(data)
-
   return (
     <div className="category-recirc">
      <div className="left">
        <Link to='/'>
-          👈 Prev
+          Prev
        </Link>
       </div>
      <div className="right">
        <Link to='/'>
-         Next 👉
+        Next
        </Link>
      </div>
    </div>
