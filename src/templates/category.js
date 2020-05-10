@@ -5,6 +5,7 @@ import markdown from 'remark-parse';
 import html from 'remark-html';
 
 import Layout from "../components/layout"
+import SEO from '../components/seo'
 import SecondaryPageTitle from "../components/secondarypage-title"
 import CategoryPageHero from "../components/categorypage-hero"
 import CategoryPageArticlePromo from "../components/categorypage-article-promo"
@@ -17,13 +18,21 @@ const Template = ({ data }) => {
   
   return (
     <Layout page={home.Slug}>
+
+      <SEO
+        title={`${home.Title} | Paused`}
+        description={home.Blurb}
+        image={home.Featured_image}
+      />
       
       <SecondaryPageTitle title={home.Title} />
       
-      <img
-        className="category-hero-image"
-        src="https://cdn.glitch.com/5d4ad69e-6a76-4cac-af1a-39ec786a0062%2Fhawaii1.jpg?v=1587843662463"
-      />
+      <div className='category-hero-image-wrapper'>
+        <img
+          className="category-hero-image"
+          src={home.Featured_image}
+        />
+      </div>
 
       <h4 className="category-hero-mini-subhed">
         {home.Blurb}
@@ -117,6 +126,7 @@ export const pageQuery = graphql`
         Blurb
         Body
         Featured_video
+        Featured_image
         Slug
       }
     }

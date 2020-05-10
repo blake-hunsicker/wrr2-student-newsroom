@@ -16,7 +16,11 @@ const IndexPage = ({ data }) => {
 
     <Layout page='light'>
 
-      <SEO title="Home" />
+      <SEO
+        title='Paused'
+        description='Stories about the global impacts of the COVID-19 pandemic, told by Journalism graduate students from the Studio 20 - Digital First program at the New York University. Stories about how people around the world are coping with the coronavirus situation, innovating and finding new ways of dealing with the stress, the anxiety and other hardships of these times.'
+        image={featuredPost.data.Featured_image}
+      />
       
       <HomepageHero
         featuredStoryImage={featuredPost.data.Featured_image}

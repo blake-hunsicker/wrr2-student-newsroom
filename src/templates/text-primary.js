@@ -5,6 +5,7 @@ import markdown from 'remark-parse';
 import html from 'remark-html';
 
 import Layout from "../components/layout"
+import SEO from '../components/seo'
 import PostPageTitle from "../components/postpage-title"
 import PostPageRecirc from "../components/postpage-recirc"
 
@@ -16,6 +17,12 @@ const Template = ({ data }) => {
       
   return (
     <Layout page={processedCategory}>
+
+      <SEO
+        title={`${post.Title} | Paused`}
+        description={post.Blurb}
+        image={post.Featured_image}
+      />
             
       <PostPageTitle
         link={processedCategory}
