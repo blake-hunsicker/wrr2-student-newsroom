@@ -13,7 +13,7 @@ import './css/map.css';
 const Layout = ({ children, page }) => {
   return (
     <div className={page}>
-      <main>
+      <main className='modal'>
         {children}
         </main>
     </div>

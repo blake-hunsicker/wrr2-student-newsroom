@@ -3,7 +3,8 @@
 }
 
 .author-page-image-wrapper {
-  grid-column: 4 / 14;
+  grid-column: 1 / 7;
+  grid-row: 2 / 5;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -21,11 +22,12 @@
   font-weight: 400;
 }
 .author-role {
-  grid-column: 4 / 14;
-  text-align: center;
+  grid-column: 8 / 16;
+  grid-row: 2;
 }
 .social {
-  grid-column: 4 / 14;
+  grid-column: 8 / 16;
+  /* grid-row: 3; */
   display: flex;
 }
 .social-pill {
@@ -38,5 +40,47 @@
   background: rgba(0,0,0,0.2);
 }
 .author-bio {
+  grid-column: 8 / 16;
+  grid-row: 3;
+}
+
+.modal .author-page-image-wrapper {
   grid-column: 4 / 14;
+  grid-row: 2;
+}
+.modal .author-role {
+  grid-column: 4 / 14;
+  grid-row: 3;
+  text-align: center;
+}
+.modal .social{
+  grid-column: 4 / 14;
+  grid-row: 4;
+}
+.modal .author-bio {
+  grid-column: 4 / 14;
+  grid-row: 5;
+}
+
+@media (max-width: 767px) {
+  .modal .author-page-image-wrapper,
+  .author-page-image-wrapper {
+    grid-column: 1 / 17;
+    grid-row: 2;
+  }
+  .modal .author-role,
+  .author-role {
+    grid-column: 2 / 16;
+    grid-row: 3;
+  }
+  .modal .social,
+  .social {
+    grid-column: 2 / 16;
+    grid-row: 4;
+  }
+  .modal .author-bio,
+  .author-bio {
+    grid-column: 2 / 16;
+    grid-row: 5;
+  }
 }

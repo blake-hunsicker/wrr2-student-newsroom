@@ -21,12 +21,12 @@ const Author = ({data}) => {
       {({ modal, closeTo }) => (
         <>
           {modal ? (
-            <ModalLayout page={[authors.Name, 'author'].join(' ')}>
+            <ModalLayout page='author'>
               <SEO title={authors.Name} />
 
               <SecondaryPageTitle title={authors.Name} />
               
-              < div className='author-page-image-wrapper'>
+              <div className='author-page-image-wrapper'>
                 <img
                   src={authors.Author_image[0].url}
                 />
@@ -85,14 +85,16 @@ const Author = ({data}) => {
       
             </ModalLayout>
           ) : (
-            <Layout page={[authors.Name, 'author'].join(' ')}>
+            <Layout page='author'>
               <SEO title={authors.Name} />
+
               <SecondaryPageTitle title={authors.Name} />
 
-              <img
-                className='author-photo'
-                src={authors.Author_image[0].url}
-              />
+              <div className='author-page-image-wrapper'>
+                <img
+                  src={authors.Author_image[0].url}
+                />
+              </div>
 
               <h5 className='author-role'>
                 {authors.Roles}

@@ -12,7 +12,8 @@ import CategoryPageRecirc from "../components/categorypage-recirc"
 
 const Template = ({ data }) => {
   const home = data.airtable.data
-  const posts = data.allAirtable
+  const posts = data.categoryStories
+  const otherCategories = data.categories
   
   return (
     <Layout page={home.Slug}>
@@ -56,14 +57,14 @@ const Template = ({ data }) => {
           <Link className="category-promo" to={data.Slug}>
             <div className="category-promo-text left">
               <h2 className="category-promo-title">{data.Title}</h2>
-              <h5 className="category-promo-byline">{data.Authors}</h5>
+              <h4 className="category-promo-byline">{data.Authors}</h4>
               <div
                 className="category-promo-blurb"
                 dangerouslySetInnerHTML={{
                   __html: unified()
                     .use(markdown)
                     .use(html)
-                    .processSync(home.Blurb)
+                    .processSync(data.Blurb)
                 }}
               />
             </div>
@@ -84,21 +85,21 @@ const Template = ({ data }) => {
           </div>
           <div className="category-promo-text right">
             <h2 className="category-promo-title">{data.Title}</h2>
-            <h5 className="category-promo-byline">{data.Authors}</h5>
+            <h4 className="category-promo-byline">{data.Authors}</h4>
             <div
               className="category-promo-blurb"
               dangerouslySetInnerHTML={{
                 __html: unified()
                   .use(markdown)
                   .use(html)
-                  .processSync(home.Blurb)
+                  .processSync(data.Blurb)
               }}
             />
           </div>
         </Link>
       ))}
       
-      <CategoryPageRecirc />
+      <CategoryPageRecirc/>
       
     </Layout>
   );
@@ -120,7 +121,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allAirtable(
+    categoryStories: allAirtable(
       filter: {
         data: {
           Category: {
@@ -140,6 +141,24 @@ export const pageQuery = graphql`
           Type
           Category
           Featured_image
+          Slug
+        }
+      }
+    }
+    categories: allAirtable(
+      filter: {
+        data: {
+          Category: {
+            ne: $category
+          },
+          Type: {
+            eq: "Home"
+          }
+        }
+      }
+    ) {
+      nodes {
+        data {
           Slug
         }
       }

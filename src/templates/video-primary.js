@@ -11,15 +11,19 @@ import PostPageRecirc from "../components/postpage-recirc"
 const Template = ({ data }) => {
   
   const post = data.airtable.data;
+  const processedCategory = post.Category.replace(/\s+/g, '-').toLowerCase()
+  const processedAuthor = post.Authors.replace(/\s+/g, '-').toLowerCase()
 
   console.log('Welcome! Hope you enjoy reading "' + post.Title +'" by ' + post.Authors + '.');
 
   return (
-    <Layout>
+    <Layout page={processedCategory}>
 
     <PostPageTitle
+      link = {processedCategory}
       type={post.Category}
       title={post.Title}
+      authorLink={processedAuthor}
       authors={post.Authors}
     />
       

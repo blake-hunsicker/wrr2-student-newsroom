@@ -11,12 +11,12 @@
 }
 
 .post-page-title-text {
-  font-family: Merriweather;
+  font-family: Tamil MN;
   font-size: 4.2rem;
   color: rgba(0,0,0,0);
-  -webkit-text-fill-color: #FFE8D1;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-fill-color: rgba(0,0,0,0);
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #FFE8D1;
   margin: 0 0 1rem;
 }
 .post-page-byline {
@@ -154,7 +154,7 @@ blockquote p {
   color: rgba(0,0,0,0);
   -webkit-text-fill-color: #FFE8D1;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: #FFE8D1;
 }
 .post-quote-large h2 {
   font-family: "Tamil MN";

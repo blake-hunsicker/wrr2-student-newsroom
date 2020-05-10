@@ -1,17 +1,59 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-export default props => (
-  <div className="category-recirc">
-    <div className="left">
-      <Link to="/">
-        👈 Prev
-      </Link>
-    </div>
-    <div className="right">
-      <Link to="/">
-        Next 👉
-      </Link>
-    </div>
-  </div>
-)
+// const CategoryRecirc = ({ data }) => (
+//   <div className="category-recirc">
+//     <div className="left">
+//       <Link to={props.prev}>
+//         👈 Prev
+//       </Link>
+//     </div>
+//     <div className="right">
+//       <Link to={props.next}>
+//         Next 👉
+//       </Link>
+//     </div>
+//   </div>
+// )
+
+const Categories = () => {
+
+  const data = useStaticQuery(graphql`
+    query Categories {
+      allAirtable(
+        filter: {
+          data: {
+            Type: {
+              eq: "Home"
+            }
+          }
+        }
+      ) {
+        nodes {
+          data {
+            Slug
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data)
+
+  return (
+    <div className="category-recirc">
+     <div className="left">
+       <Link to='/'>
+          👈 Prev
+       </Link>
+      </div>
+     <div className="right">
+       <Link to='/'>
+         Next 👉
+       </Link>
+     </div>
+   </div>
+  )
+}
+
+export default Categories;

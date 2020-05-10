@@ -9,6 +9,10 @@ body {
   font-family: Tamil MN, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #FFE8D1;
   margin: 0;
+  overscroll-behavior: none;
+}
+a {
+  text-decoration: none; 
 }
 main {
   display: grid;
@@ -17,12 +21,17 @@ main {
   grid-row-gap: 0.4rem;
   margin: 4rem 0 8rem;
 }
+main.modal {
+  margin: 2rem 0 2rem;
+}
 
 footer {
-  color: #777;
-  padding: auto 2rem 0;
+  color: #eee;
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  margin: 4rem 0 0; 
 }
-footer a {
+footer > a {
   text-decoration: underline;
 }
 
@@ -59,12 +68,14 @@ p {
 }
 
 .ReactModal__Content.ReactModal__Content--after-open {
-  top: 5vh!important;
+  top: 10vh!important;
   right: 20vw!important;
   left: 20vw!important;
-  bottom: 5vh!important;
+  bottom: 0vh!important;
   background: #2D3D8B!important;
   border: none!important;
+  padding: 0!important;
+  border-radius: 0.5rem 0.5rem 0 0!important;
 }
 
 .ReactModal__Content::-webkit-scrollbar {
@@ -138,6 +149,7 @@ nav {
   display: none;
 }
 .about nav,
+.author nav,
 .coping nav,
 .uplifting nav,
 .innovating nav,
@@ -160,9 +172,6 @@ nav {
   align-items: center;
   letter-spacing: 1px;
   }
-a:link {
-    text-decoration: none; 
-}
 li {
   display: inline-block;
   padding: 8px;
@@ -240,7 +249,7 @@ li {
   }
 
   .ReactModal__Content.ReactModal__Content--after-open {
-    top: 5vh!important;
+    top: 10vh!important;
     right: 0!important;
     left: 0!important;
     bottom: 0!important;
