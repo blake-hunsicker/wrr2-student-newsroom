@@ -11,7 +11,7 @@
 }
 
 .post-page-title-text {
-  font-family: 'Tamil MN';
+  /* font-family: 'Tamil MN'; */
   font-size: 4.2rem;
   color: rgba(0,0,0,0);
   -webkit-text-fill-color: rgba(0,0,0,0);
@@ -157,7 +157,7 @@ blockquote p {
   -webkit-text-stroke-color: #FFE8D1;
 }
 .post-quote-large h2 {
-  font-family: "Tamil MN";
+  /* font-family: "Tamil MN"; */
 }
 
 /* Post page recirc */

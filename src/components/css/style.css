@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=News+Cycle:wght@400;700&family=Lato:wght@400;700display=swap');
 
 @font-face {
   font-family: 'Tamil MN';
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Tamil MN', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Tamil MN', 'Lato','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: #FFE8D1;
   margin: 0;
   overscroll-behavior: none;
@@ -115,7 +115,7 @@ p {
 .secondary-page-title {
   grid-column: 2 / 16;
   grid-row: 1;
-  font-family: Tamil MN;
+  /* font-family: Tamil MN; */
   text-transform: uppercase;
   margin: 0 0 2rem;
 }

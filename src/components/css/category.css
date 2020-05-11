@@ -172,7 +172,7 @@
     text-align: right;
   }
   .category-promo-text .category-promo-title {
-    font-family: Tamil MN;
+    /* font-family: Tamil MN; */
     -webkit-text-stroke-width: 0;
     -webkit-text-stroke-color: none;
     color: rgb(255,232,209);
