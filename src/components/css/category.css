@@ -18,15 +18,16 @@
 }
 
 .category-hero-mini-subhed {
-  grid-column: 9 / 11;
-  grid-row: 2 / 4;
+  grid-column: 2 / 16;
+  grid-row: 2;
   font-family: News Cycle;
   font-weight: 400;
+  margin: -1rem 0 1rem;
 }
 
 .category-hero-links {
-  grid-column: 12 / 15;
-  grid-row: 2 / 4;
+  grid-column: 9 / 14;
+  grid-row: 3;
   font-family: News Cycle;
   font-weight: 400;
 }
@@ -125,7 +126,7 @@
 
 @media (max-width: 767px) {
 
-  .category-hero-image {
+  .category-hero-image-wrapper {
     grid-column: 1 / 17;
     grid-row: 2 / 4;
   }
@@ -196,7 +197,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .category-hero-image {
+  .category-hero-image-wrapper {
     grid-column: 1 / 17;
     grid-row: 2 / 4;
   }
@@ -220,7 +221,7 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1339px) {
-  .category-hero-image {
+  .category-hero-image-wrapper {
     grid-column: 1 / 10;
     grid-row: 2 / 6;
   }

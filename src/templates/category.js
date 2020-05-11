@@ -23,9 +23,14 @@ const Template = ({ data }) => {
         title={`${home.Title} | Paused`}
         description={home.Blurb}
         image={home.Featured_image}
+        keywords={home.Keywords}
       />
       
       <SecondaryPageTitle title={home.Title} />
+
+      <h4 className="category-hero-mini-subhed">
+        {home.Blurb}
+      </h4>
       
       <div className='category-hero-image-wrapper'>
         <img
@@ -33,10 +38,6 @@ const Template = ({ data }) => {
           src={home.Featured_image}
         />
       </div>
-
-      <h4 className="category-hero-mini-subhed">
-        {home.Blurb}
-      </h4>
 
       <div className="category-hero-links">
         <h4 className="category-hero-links-label">Stories</h4>
@@ -46,20 +47,16 @@ const Template = ({ data }) => {
           </Link>
         ))}
       </div>
-
-      {/* <h2 className="category-hero-large-subhed"> */}
-        <div
-          className="category-hero-large-subhed"
-          dangerouslySetInnerHTML={{
-            __html: unified()
-              .use(markdown)
-              .use(html)
-              .processSync(home.Body)
-          }}
-        />
-      {/* </h2> */}
-
-      {/* <div className="top-line"></div> */}
+      
+      <div
+        className="category-hero-large-subhed"
+        dangerouslySetInnerHTML={{
+          __html: unified()
+            .use(markdown)
+            .use(html)
+            .processSync(home.Body)
+        }}
+      />
       
       {posts.nodes.map(({data}, index) => (
         (index == 0 || index == 2) ?
@@ -127,6 +124,7 @@ export const pageQuery = graphql`
         Body
         Featured_video
         Featured_image
+        Keywords
         Slug
       }
     }
