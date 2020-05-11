@@ -56,14 +56,18 @@
   height: 100%;
 }
 
-.author-name {
+.author-name,
+.author-card-name {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0;
 }
 
-p.author-role {
-  /* text-align: right; */
+.author-role,
+.author-card-role {
+  text-align: center;
+}
+.author-card-role {
   margin-top: 0;
 }
 

@@ -51,10 +51,10 @@ const AboutPage = ({ data }) => {
                 src={data.Author_image[0].url}
               />
             </div>
-            <h4 className="author-name">
+            <h4 className="author-card-name">
               {data.Name}
             </h4>
-            <p className="author-role">
+            <p className="author-card-role">
               {data.Roles}
             </p>
           </Link> 
