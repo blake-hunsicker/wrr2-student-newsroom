@@ -45,9 +45,8 @@
 .social-pill:hover {
   background: rgba(0,0,0,0.2);
 }
-.author-bio {
-  /* grid-column: 8 / 16; */
-  /* grid-row: 3; */
+.author-bio a {
+  text-decoration: underline
 }
 
 .modal .author-page-image-wrapper {
