@@ -14,8 +14,13 @@ import SecondaryPageTitle from "../components/secondarypage-title"
 
 const Author = ({data}) => {
   const authors = data.author.data
-  const social = data.social.data
 
+  const socialCells = data.social.data
+
+  const socialLinks = Object.entries(socialCells)
+
+  console.log(socialLinks)
+  
   return (
     <ModalRoutingContext.Consumer>
       {({ modal, closeTo }) => (
@@ -37,56 +42,37 @@ const Author = ({data}) => {
                 />
               </div>
 
-              <h5 className='author-role'>
-                {authors.Roles}
-              </h5>
+              <div className="author-info">
+                <h4 className='author-role'>
+                  {authors.Roles}
+                </h4>
 
-              {/* {social.map(({data}, index) => (
-                ({data} === null) ?
-                  <a
-                    href='https://amazon.com'
-                    target='_blank'
-                    className='social-pill'
-                  >
-                    got one
-                  </a>
-                :
-                  null
-              ))} */}
+                <div className='author-social'>
+                  {socialLinks.map((data, index) => (
+                    (data[1] != null) ?
+                      <a
+                        href={data[1]}
+                        target='_blank'
+                        className='social-pill'
+                        key={index}
+                      >
+                        {data[0]}
+                      </a>
+                    :
+                      null
+                  ))}
+                </div>
 
-              {/* <div className='social'>
-                <a
-                  href={authors.Twitter}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  Twitter
-                </a>
-                <a
-                  href={authors.LinkedIn}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href={authors.Portfolio}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  Personal site
-                </a>
-              </div> */}
-
-              <div
-                className='author-bio'
-                dangerouslySetInnerHTML={{
-                  __html: unified()
-                    .use(markdown)
-                    .use(html)
-                    .processSync(authors.Bio)
-                }}
-              />
+                <div
+                  className='author-bio'
+                  dangerouslySetInnerHTML={{
+                    __html: unified()
+                      .use(markdown)
+                      .use(html)
+                      .processSync(authors.Bio)
+                  }}
+                />
+              </div>
       
             </ModalLayout>
           ) : (
@@ -106,48 +92,38 @@ const Author = ({data}) => {
                 />
               </div>
 
-              <h5 className='author-role'>
-                {authors.Roles}
-              </h5>
+              <div className="author-info">
+                <h4 className='author-role'>
+                  {authors.Roles}
+                </h4>
 
-              {/* <div className='social'>
+                <div className='author-social'>
+                  {socialLinks.map((data, index) => (
+                    (data[1] != null) ?
+                      <a
+                        href={data[1]}
+                        target='_blank'
+                        className='social-pill'
+                        key={index}
+                      >
+                        {data[0]}
+                      </a>
+                    :
+                      null
+                  ))}
+                </div>
 
-                <a
-                  href={authors.Twitter}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  Twitter
-                </a>
-                  
-                <a
-                  href={authors.LinkedIn}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  LinkedIn
-                </a>
+                <div
+                  className='author-bio'
+                  dangerouslySetInnerHTML={{
+                    __html: unified()
+                      .use(markdown)
+                      .use(html)
+                      .processSync(authors.Bio)
+                  }}
+                />
+              </div>
 
-                
-                <a
-                  href={authors.Portfolio}
-                  target='_blank'
-                  className='social-pill'
-                >
-                  Personal site
-                </a>
-
-              </div> */}
-
-              <div
-                className='author-bio'
-                dangerouslySetInnerHTML={{
-                  __html: unified()
-                    .use(markdown)
-                    .use(html)
-                    .processSync(authors.Bio)
-                }}
-              />
             </Layout>
           )}
         </>
@@ -174,8 +150,9 @@ export const pageQuery = graphql`
     ) {
       data {
         Twitter
-        LinkedIn
-        Portfolio
+        Instagram
+        Facebook
+        Website
       }
     }
   }
