@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
       />
       
       <HomepageHero
-        featuredStoryImage={featuredPost.data.Featured_image}
+        featuredStoryImage={featuredPost.data.Featured_image[0].url}
         featuredStoryURL={featuredPost.data.Slug}
         featuredStoryByline={featuredPost.data.Authors}
         featuredStoryTitle={featuredPost.data.Title}
@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
 
           <ArticlePromo
             index={index}
-            image={data.Featured_image}
+            image={data.Featured_image[0].url}
             slug={data.Slug}
             title={data.Title}
             authors={data.Authors}
@@ -60,7 +60,9 @@ export const pageQuery = graphql`
           Authors
           Slug
           Body
-          Featured_image
+          Featured_image {
+            url
+          }
           Status
           Blurb
         }
@@ -70,7 +72,9 @@ export const pageQuery = graphql`
       data {
         Title
         Authors
-        Featured_image
+        Featured_image {
+          url
+        }
         Slug
       }
     }

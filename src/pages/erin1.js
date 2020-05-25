@@ -39,7 +39,9 @@ export const pageQuery = graphql`
           Authors
           Slug
           Body
-          Featured_image
+          Featured_image {
+            url
+          }
           Status
           Blurb
         }
@@ -49,7 +51,9 @@ export const pageQuery = graphql`
       data {
         Title
         Authors
-        Featured_image
+        Featured_image {
+          url
+        }
         Slug
       }
     }

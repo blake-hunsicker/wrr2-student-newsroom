@@ -76,10 +76,10 @@ class PageQueryStore extends _react.default.Component {
     const data = this.state.pageQueryData[getPathFromProps(this.props)]; // eslint-disable-next-line
 
     if (!data) {
-      return _react.default.createElement("div", null);
+      return /*#__PURE__*/_react.default.createElement("div", null);
     }
 
-    return _react.default.createElement(_pageRenderer.default, (0, _extends2.default)({}, this.props, data));
+    return /*#__PURE__*/_react.default.createElement(_pageRenderer.default, (0, _extends2.default)({}, this.props, data));
   }
 
 }
@@ -114,7 +114,7 @@ class StaticQueryStore extends _react.default.Component {
   }
 
   render() {
-    return _react.default.createElement(_gatsby.StaticQueryContext.Provider, {
+    return /*#__PURE__*/_react.default.createElement(_gatsby.StaticQueryContext.Provider, {
       value: this.state.staticQueryData
     }, this.props.children);
   }

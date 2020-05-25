@@ -16,6 +16,14 @@ const Template = ({ data }) => {
   const posts = data.categoryStories
   const otherCategories = data.categories
   
+  // const categories = []
+
+  // {otherCategories.nodes.map(({data}, index) => (
+  //   categories.push(data.Slug)
+  // ))}
+
+  // console.log(categories)
+  
   return (
     <Layout page={home.Slug}>
 
@@ -123,7 +131,9 @@ export const pageQuery = graphql`
         Blurb
         Body
         Featured_video
-        Featured_image
+        Featured_image {
+          url
+        }
         Keywords
         Slug
       }
@@ -148,17 +158,17 @@ export const pageQuery = graphql`
           Authors
           Type
           Category
-          Featured_image
+          Featured_image {
+            url
+          }
           Slug
         }
       }
     }
+
     categories: allAirtable(
       filter: {
         data: {
-          Category: {
-            ne: $category
-          },
           Type: {
             eq: "Home"
           }

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import unified from 'unified';
 import markdown from 'remark-parse';
 import html from 'remark-html';
+// import images from 'remark-images';
 
 import Layout from "../components/layout"
 import SEO from '../components/seo'
@@ -36,8 +37,8 @@ const Template = ({ data }) => {
         className="text-post-blurb"
         dangerouslySetInnerHTML={{
           __html: unified()
-            .use(markdown)
             .use(html)
+            .use(markdown)
             .processSync(post.Blurb)
         }}
       />
@@ -51,8 +52,8 @@ const Template = ({ data }) => {
         className="text-post-body"
         dangerouslySetInnerHTML={{
           __html: unified()
-            .use(markdown)
             .use(html)
+            .use(markdown)
             .processSync(post.Body)
         }}
       />
@@ -79,7 +80,9 @@ export const pageQuery = graphql`
         Slug
         Body
         Featured_video
-        Featured_image
+        Featured_image {
+          url
+        }
         Publication_date
         Status
         Blurb

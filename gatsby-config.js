@@ -33,17 +33,11 @@ module.exports = {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: `keyFJiFrIZGSPxG3c`, // may instead specify via env, see below
-        concurrency: 5, // default, see using markdown and attachments for more information
+        concurrency: 0, // default, see using markdown and attachments for more information
         tables: [
           {
             baseId: `appNluUpWfxwPYpy6`,
-            tableName: `All Posts`,
-            createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
-            separateMapType: false,
-          },
-          {
-            baseId: `appNluUpWfxwPYpy6`,
-            tableName: `Surveillance`,
+            tableName: `AllPosts`,
             createSeparateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
             separateMapType: false,
           },

@@ -49,13 +49,33 @@
   grid-column: 9 / 16;
 }
 
-.text-post-body .post-video-wrapper {
+.text-post-body .post-video-wrapper,
+.text-post-body .post-image-wrapper {
   grid-column: 2 / 16;
+  margin: 1rem 0;
+}
+.text-post-body .post-image-wrapper {
+  width: 100%;
+}
+
+.post-image-wrapper .post-image {
+  width: 100%;
+}
+.post-image-wrapper .caption {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 .text-post-body > iframe {
-  grid-column: 4 / 14;
+  /* grid-column: 4 / 14; */
   width: 100%;
+}
+
+.text-post-body > .youtube-video  {
+  grid-column: 2 / 16;
+}
+.spotify-embed {
+  grid-column: 4 / 14;
 }
 
 .text-post-body blockquote {
@@ -63,12 +83,24 @@
   grid-row: span 2;
 }
 
-.text-post-body .post-video-wrapper ~ p {
+
+.text-post-body .post-image-wrapper:nth-of-type(even) ~ p {
   grid-column: 2 / 9;
 }
-
-.text-post-body .post-video-wrapper ~ blockquote {
+.text-post-body .post-image-wrapper:nth-of-type(even) ~ blockquote {
   grid-column: 12 / 16;
+}
+.text-post-body .spotify-embed:last-of-type ~ p {
+  grid-column: 9 / 16;
+}
+.text-post-body .spotify-embed:last-of-type ~ blockquote {
+  grid-column: 3 / 7;
+}
+
+/* Spotify */
+
+.spotify-embed {
+  grid-column: 2 / 16;
 }
 
 /* Video Primary template */
@@ -204,6 +236,14 @@ blockquote p {
   }
   .text-post-body .post-video-wrapper ~ p,
   .text-post-body .post-video-wrapper ~ blockquote {
+    grid-column: 2 / 16;
+  }
+  .text-post-body .post-image-wrapper:nth-of-type(even) ~ p,
+  .text-post-body .post-image-wrapper:nth-of-type(even) ~ blockquote {
+    grid-column: 2 / 16;
+  }
+  .text-post-body .spotify-embed:last-of-type ~ p,
+  .text-post-body .spotify-embed:last-of-type ~ blockquote {
     grid-column: 2 / 16;
   }
 
