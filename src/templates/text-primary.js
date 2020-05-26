@@ -22,7 +22,7 @@ const Template = ({ data }) => {
       <SEO
         title={`${post.Title} | Paused`}
         description={post.Blurb}
-        image={post.Featured_image}
+        image={post.Featured_image[0].url}
       />
             
       <PostPageTitle
@@ -43,10 +43,15 @@ const Template = ({ data }) => {
         }}
       />
       
-      <img
-        className="textPostHeroImage"
-        src="https://cdn.glitch.com/5d4ad69e-6a76-4cac-af1a-39ec786a0062%2FLuke%20homepage.png?v=1587749513127"
-      />
+      <div className="text-post-hero-image-wrapper">
+        <img
+          className="text-post-hero-image"
+          src={post.Featured_image[0].url}
+        />
+        <div class="caption">
+          {post.Featured_image_caption}
+        </div>
+      </div>
       
       <div
         className="text-post-body"
@@ -83,6 +88,7 @@ export const pageQuery = graphql`
         Featured_image {
           url
         }
+        Featured_image_caption
         Publication_date
         Status
         Blurb
