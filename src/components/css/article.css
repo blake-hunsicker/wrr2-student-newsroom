@@ -50,7 +50,8 @@
   grid-row-gap: 0.4rem;
 }
 
-.text-post-body p {
+.text-post-body p,
+.text-post-body h3 {
   grid-column: 9 / 16;
 }
 
@@ -108,13 +109,18 @@
 
 /* Video Primary template */
 
-.post-youtube-video {
-  grid-column: 4 / 14;
+.video-post-youtube-video {
+  grid-column: 2 / 16;
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
-  
 }
+.video-post-youtube-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .post-youtube-video iframe {
   position: absolute;
   width: 100%;
@@ -176,33 +182,36 @@ blockquote {
   font-size: 1.4rem;
 }
 
-.post-quote-mini {
-  grid-column: 13 / 15;
-  font-weight: bold;
+/* Maznah */
+
+.maznah-shehzad .story-section {
+  grid-column: 1 / 17;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 0.4rem;
+  grid-row-gap: 0.4rem;
+  margin: 2rem 0 0;
 }
 
-.post-quote-large {
-  grid-column: 13 / 15;
+.maznah-shehzad .story-section:nth-of-type(1) p {
+  grid-column: 2 / 9;
 }
-.post-quote-large h3 {
-  font-family: 'Merriweather';
-  color: rgba(0,0,0,0);
-  -webkit-text-fill-color: #FFE8D1;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #FFE8D1;
+.maznah-shehzad .story-section:nth-of-type(2) p {
+  grid-column: 9 / 16;  
 }
-.post-quote-large h2 {
-  /* font-family: "Tamil MN"; */
+.maznah-shehzad .story-section:nth-of-type(3) p {
+  grid-column: 2 / 9;
 }
-
-/* Post page recirc */
-
-.post-page-recirc {
+.maznah-shehzad .story-section:nth-of-type(1) h3, 
+.maznah-shehzad .story-section:nth-of-type(2) h3,
+.maznah-shehzad .story-section:nth-of-type(3) h3 {
   grid-column: 2 / 16;
-  display: flex;
-  justify-content: space-around;
-  text-transform: uppercase;
-  margin: 4rem 0;
+  text-align: center;
+}
+.maznah-shehzad .story-section:nth-of-type(1) .post-youtube-video,
+.maznah-shehzad .story-section:nth-of-type(2) .post-youtube-video,
+.maznah-shehzad .story-section:nth-of-type(3) .post-youtube-video {
+  grid-column: 2 / 16;
 }
 
 /* Responsive */
@@ -259,6 +268,9 @@ blockquote {
     grid-column: 2 / 16;
   }
 
+  .video-post-youtube-video {
+    grid-column: 1 / 17;
+  }
   .video-post-blurb {
     grid-column: 2 / 16;
   }
@@ -275,6 +287,25 @@ blockquote {
   .video-post-body .post-video-wrapper ~ p,
   .video-post-body .post-video-wrapper ~ blockquote {
     grid-column: 2 / 16;
+  }
+
+  /* Maznah */
+
+  .maznah-shehzad .story-section:nth-of-type(1) p,
+  .maznah-shehzad .story-section:nth-of-type(2) p,
+  .maznah-shehzad .story-section:nth-of-type(3) p {
+    grid-column: 2 / 16;
+  }
+  .maznah-shehzad .story-section:nth-of-type(1) h3, 
+  .maznah-shehzad .story-section:nth-of-type(2) h3,
+  .maznah-shehzad .story-section:nth-of-type(3) h3 {
+    grid-column: 2 / 16;
+    text-align: center;
+  }
+  .maznah-shehzad .story-section:nth-of-type(1) .post-youtube-video,
+  .maznah-shehzad .story-section:nth-of-type(2) .post-youtube-video,
+  .maznah-shehzad .story-section:nth-of-type(3) .post-youtube-video {
+    grid-column: 1 / 17;
   }
 
 }

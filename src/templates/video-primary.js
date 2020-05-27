@@ -17,7 +17,7 @@ const Template = ({ data }) => {
   console.log('Welcome! Hope you enjoy reading "' + post.Title +'" by ' + post.Authors + '.');
 
   return (
-    <Layout page={processedCategory}>
+    <Layout page={`${processedCategory} ${processedAuthor}`}>
 
       <SEO
         title={`${post.Title} | Paused`}
@@ -33,7 +33,7 @@ const Template = ({ data }) => {
         authors={post.Authors}
       />
       
-      <div className="post-youtube-video">
+      <div className="video-post-youtube-video">
         <iframe
           src={post.Featured_video}
           title="video"
@@ -43,15 +43,9 @@ const Template = ({ data }) => {
         ></iframe>
       </div>
 
-      <div
-        className="video-post-blurb"
-        dangerouslySetInnerHTML={{
-          __html: unified()
-            .use(markdown)
-            .use(html)
-            .processSync(post.Blurb)
-        }}
-      />
+      <h3 className="video-post-blurb">
+        {post.Blurb}
+      </h3>
 
       <div
         className="video-post-body"

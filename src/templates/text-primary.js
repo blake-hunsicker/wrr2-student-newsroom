@@ -17,7 +17,7 @@ const Template = ({ data }) => {
   const processedAuthor = post.Authors.replace(/\s+/g, '-').toLowerCase()
       
   return (
-    <Layout page={processedCategory}>
+    <Layout page={`${processedCategory} ${processedAuthor}`}>
 
       <SEO
         title={`${post.Title} | Paused`}
@@ -33,15 +33,9 @@ const Template = ({ data }) => {
         authors={post.Authors}
       />
       
-      <div
-        className="text-post-blurb"
-        dangerouslySetInnerHTML={{
-          __html: unified()
-            .use(html)
-            .use(markdown)
-            .processSync(post.Blurb)
-        }}
-      />
+      <h3 className="text-post-blurb">
+        {post.Blurb}
+      </h3>
       
       <div className="text-post-hero-image-wrapper">
         <img

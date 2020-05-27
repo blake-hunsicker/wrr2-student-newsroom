@@ -58,6 +58,9 @@ p {
   font-family: News Cycle;
   font-size: 1.2rem;
 }
+p a {
+  text-decoration: underline;
+}
 
 .ReactModal__Overlay {
   background: rgba(0, 0, 0, 0.75);
