@@ -22,7 +22,7 @@ const Template = ({ data }) => {
       <SEO
         title={`${post.Title} | Paused`}
         description={post.Blurb}
-        image={post.Featured_image}
+        image={post.Featured_image[0].url}
       />
 
       <PostPageTitle
