@@ -10,10 +10,10 @@
   margin: 0 0 2rem;
 }
 
-.post-page-title:hover .post-page-type {
+.category-link:hover {
   text-decoration: underline;
 }
-.post-page-title:hover .post-page-byline {
+.author-link:hover {
   text-decoration: underline;
 }
 
