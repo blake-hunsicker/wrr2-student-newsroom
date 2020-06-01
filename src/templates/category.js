@@ -30,7 +30,7 @@ const Template = ({ data }) => {
       <SEO
         title={`${home.Title} | Paused`}
         description={home.Blurb}
-        image={home.Featured_image}
+        image={home.Featured_image[0].url}
         keywords={home.Keywords}
       />
       
@@ -43,7 +43,7 @@ const Template = ({ data }) => {
       <div className='category-hero-image-wrapper'>
         <img
           className="category-hero-image"
-          src={home.Featured_image}
+          src={home.Featured_image[0].url}
         />
       </div>
 
@@ -85,7 +85,7 @@ const Template = ({ data }) => {
             <div className="category-promo-image-wrapper right">
               <img
                 className="category-promo-image"
-                src={data.Featured_image}
+                src={data.Featured_image[0].url}
               />
             </div>
           </Link>
@@ -94,7 +94,7 @@ const Template = ({ data }) => {
           <div className="category-promo-image-wrapper left">
             <img
               className="category-promo-image"
-              src={data.Featured_image}
+              src={data.Featured_image[0].url}
             />
           </div>
           <div className="category-promo-text right">
@@ -147,6 +147,9 @@ export const pageQuery = graphql`
           },
           Type: {
             ne: "Home"
+          },
+          Status: {
+            eq: "Complete"
           }
         }
       }

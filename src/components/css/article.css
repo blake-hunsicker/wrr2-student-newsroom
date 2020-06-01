@@ -10,8 +10,14 @@
   margin: 0 0 2rem;
 }
 
+.post-page-title:hover .post-page-type {
+  text-decoration: underline;
+}
+.post-page-title:hover .post-page-byline {
+  text-decoration: underline;
+}
+
 .post-page-title-text {
-  /* font-family: 'Tamil MN'; */
   font-size: 4.2rem;
   color: rgba(0,0,0,0);
   -webkit-text-fill-color: rgba(0,0,0,0);

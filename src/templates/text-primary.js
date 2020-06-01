@@ -83,7 +83,6 @@ export const pageQuery = graphql`
           url
         }
         Featured_image_caption
-        Publication_date
         Status
         Blurb
       }

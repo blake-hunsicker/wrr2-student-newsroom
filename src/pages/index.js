@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
             image={data.Featured_image[0].url}
             slug={data.Slug}
             title={data.Title}
-            authors={data.Authors}
+            // authors={data.Authors}
           />
 
         ))}
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allStories: allAirtable(
-      filter: {data: {Status: {eq: "In Progress"}}},
+      filter: {data: {Status: {eq: "Complete"}}},
       limit: 3
     ) {
       nodes {
