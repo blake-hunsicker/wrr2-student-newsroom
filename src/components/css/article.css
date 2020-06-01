@@ -205,6 +205,14 @@ blockquote {
   margin-top: 8rem;
 }
 
+/* Pato */
+
+.patricio-zenklussen .post-youtube-video {
+  grid-column: 4 / 14;
+}
+.patricio-zenklussen .spotify-embed {
+  grid-column: 4 / 14;
+}
 /* Maznah */
 
 .maznah-shehzad .story-section {

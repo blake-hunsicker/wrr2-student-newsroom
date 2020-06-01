@@ -51,7 +51,16 @@ const IndexPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allStories: allAirtable(
-      filter: {data: {Status: {eq: "Complete"}}},
+      filter: {
+        data: {
+          Status: {
+            eq: "Complete"
+          },
+          Featured: {
+            ne: true
+          }
+        }
+      },
       limit: 3
     ) {
       nodes {
@@ -68,7 +77,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    featuredStory: airtable(data: {Authors: {eq: "Ike Wilson"}}) {
+    featuredStory: airtable(data: {Featured: {eq: true}}) {
       data {
         Title
         Authors
