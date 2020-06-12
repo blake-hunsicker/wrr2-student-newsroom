@@ -1,6 +1,9 @@
 .chinese-contact-tracing {
   background: #222;
 }
+.chinese-contact-tracing nav {
+  color: #FFE8D1;
+}
 .chinese-contact-tracing .hero-text {
   grid-column: 2 / 16;
   color: white;
@@ -53,7 +56,8 @@
   }
   #story {
     grid-column: 1 / 17;
-    grid-row: 2;
+    grid-row: 3;
+    margin-top: 2rem;
   }
   .story {
     grid-column: 1 / 17;
