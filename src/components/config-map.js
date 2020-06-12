@@ -78,7 +78,7 @@ class Map extends Component {
             scroller
             .setup({
                 step: '.step',
-                offset: 0.1,
+                offset: 0.6,
                 progress: true
             })
             .onStepEnter(response => {
@@ -88,9 +88,9 @@ class Map extends Component {
                 if (config.showMarkers) {
                     marker.setLngLat(chapter.location.center);
                 }
-                if (chapter.onChapterEnter.length > 0) {
-                    chapter.onChapterEnter.forEach(setLayerOpacity);
-                }
+                // if (chapter.onChapterEnter.length > 0) {
+                //     chapter.onChapterEnter.forEach(setLayerOpacity);
+                // }
             })
             .onStepExit(response => {
                 var chapter = config.chapters.find(chap => chap.id === response.element.id);
