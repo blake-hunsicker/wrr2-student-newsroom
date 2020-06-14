@@ -7,6 +7,7 @@
 .chinese-contact-tracing .hero-text {
   grid-column: 2 / 16;
   color: white;
+  min-height: 90vh;
 }
 
 .dark img {
@@ -26,6 +27,11 @@
 #story {
   grid-column: 1 / 17;
   grid-row: 2 / 3;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 2rem;
+}
+#story .active {
+  color: rgba(255,255,255,1);
 }
 #story #features {
   display: grid;
