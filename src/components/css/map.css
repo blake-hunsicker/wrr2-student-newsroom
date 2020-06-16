@@ -18,7 +18,7 @@
   grid-column: 1 / 12;
   grid-row: 2;
   height: 100vh;
-  position: sticky;
+  position: sticky!important;
   top: 0;
 }
 .mapboxgl-canvas {

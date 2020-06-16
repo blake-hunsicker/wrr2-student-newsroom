@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import scrollama from 'scrollama';
 
 const layerTypes = {
@@ -102,6 +103,7 @@ class Map extends Component {
 
         window.addEventListener('resize', scroller.resize);
         map.scrollZoom.disable();
+        map.addControl(new mapboxgl.NavigationControl());
     }
 
     render() {
