@@ -1,4 +1,3 @@
-
 var config = {
     style: "mapbox://styles/sulinjoanna/ck9oo243h0nxx1iqtfenpx0ed",
     accessToken:
@@ -380,7 +379,7 @@ var config = {
       },
       {
         num: 1,
-        id: "Hubei",
+        id: "Hubei2",
         title: "March 25: Transportation system resumes in Hubei",
         description:
           "Roads reopen and the HigHighways and roads reopen in Hubei Province, except in Wuhan.",

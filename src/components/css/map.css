@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .chinese-contact-tracing {
   background: #222;
 }
