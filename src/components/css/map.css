@@ -1,5 +1,5 @@
-body, html {
-  overflow-x: hidden;
+body {
+  overflow-x: hidden!important;
 }
 
 .chinese-contact-tracing {
@@ -30,6 +30,7 @@ body, html {
   height: 100vh;
   position: sticky!important;
   top: 0;
+  overflow: visible;
 }
 .mapboxgl-canvas {
   height: 80vh;
