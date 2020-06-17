@@ -36,7 +36,7 @@ var config = {
           {
             layer: "search",
             opacity: 1,
-          },
+          }
         ],
         onChapterExit: [
           {
@@ -83,12 +83,12 @@ var config = {
           {
             layer: "search",
             opacity: 1,
-          },
+          }
         ],
         onChapterExit: [
           {
             layer: "per capita",
-            opacity: 0,
+            opacity: 1,
           },
           {
             layer: "Yuhang",
@@ -171,7 +171,16 @@ var config = {
           pitch: 20,
           bearing: 10,
         },
-        onChapterEnter: [],
+        onChapterEnter: [
+          {
+            layer: "search",
+            opacity: 1,
+          },
+          {
+            layer: "per capita",
+            opacity: 1,
+          },
+        ],
         onChapterExit: [],
       },
       {
