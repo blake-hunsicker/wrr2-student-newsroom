@@ -144,7 +144,7 @@ class Map extends Component {
 
 }
 
-function Chapter({id, theme, title, image, description, description2, description3, description4, description5, currentChapterID}) {
+function Chapter({id, num, theme, title, image, description, description2, description3, description4, description5, currentChapterID}) {
 
     const classList = id === currentChapterID ?
         "step active"
@@ -152,7 +152,7 @@ function Chapter({id, theme, title, image, description, description2, descriptio
         "step";
 
     return (
-        <div id={id} className={[(`${ id.search('timeline') === -1 ? 'story' : 'story' }`), classList].join(' ')}>
+        <div id={id} className={[(`${ num === 1 ? 'timeline' : 'story' }`), classList].join(' ')}>
             <div className={theme}>
                 { title &&
                     <h4 className="title">{title}</h4>

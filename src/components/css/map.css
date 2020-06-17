@@ -52,10 +52,17 @@ body {
 .timeline {
   grid-column: 12 / 17;
 }
-.story {
+.story,
+.timeline {
   grid-column: 12 / 17;
   z-index: 1;
-  margin: 0 1rem;
+  margin: 0 1rem 8rem;
+}
+.story .title {
+  background-color: #00008B;
+}
+.timeline .title {
+  background-color: #2F4F4F;
 }
 .storyCards {
   z-index: 1;
