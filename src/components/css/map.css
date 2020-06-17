@@ -8,6 +8,12 @@ body {
 .chinese-contact-tracing nav {
   color: #FFE8D1;
 }
+.chinese-contact-tracing main {
+  margin-bottom: 0;
+}
+.chinese-contact-tracing footer {
+  margin-top: 0;
+}
 .chinese-contact-tracing .hero-text {
   grid-column: 2 / 16;
   color: white;
