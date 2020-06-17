@@ -82,7 +82,7 @@ body {
     grid-row: 3;
     margin-top: 2rem;
   }
-  .story {
+  .story, .timeline {
     grid-column: 1 / 17;
   }
 }
