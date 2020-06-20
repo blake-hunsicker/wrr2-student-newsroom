@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import scrollama from 'scrollama';
+import { hidden } from 'ansi-colors';
 
 const layerTypes = {
     'fill': ['fill-opacity'],
@@ -114,17 +115,21 @@ class Map extends Component {
             <>
                 <div ref={el => this.mapContainer = el} className="mapboxgl-map" />
                 <div id="story">
-                    {/* {config.title &&
+                    {config.title &&
                         <div id="header" className={theme}>
+                            <h5><a href='/'>Paused</a></h5>
                             <h4>{config.title}</h4>
                             {config.subtitle &&
-                                <p>{config.subtitle}</p>
+                                <h5>{config.subtitle}</h5>
+                            }
+                            {config.blurb &&
+                                <p>{config.blurb}</p>
                             }
                             {config.byline &&
-                                <p>{config.byline}</p>
+                                <p>By <a href='https://paused.life/joanna-lin-su/'>{config.byline}</a></p>
                             }
                         </div>
-                    } */}
+                    }
                     <div id="features" className={alignments[config.alignment]}>
                         {
                             config.chapters.map(chapter => 
@@ -152,7 +157,7 @@ function Chapter({id, num, theme, title, image, description, description2, descr
         "step";
 
     return (
-        <div id={id} className={[(`${ num === 1 ? 'timeline' : 'story' }`), classList].join(' ')}>
+        <div id={id} className={[(`${ num === 1 ? 'story' : 'story' }`), classList].join(' ')}>
             <div className={theme}>
                 { title &&
                     <h4 className="title">{title}</h4>

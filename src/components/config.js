@@ -10,7 +10,7 @@ var config = {
       "How China’s contact tracing apps dramatically change how its citizens commute and travel",
     blurb:
       "In spring 2020, China created a massive surveillance system utilizing QR health codes to track and monitor how citizens travel and commute inside the country. Through examining web search data about the health code apps, reporting on user experiences, and detailing key events in the chronology of how the apps were rolled out, the following story depicts how China implemented one of the most extensive technological contract tracing systems in the world.",
-    byline: "by Joanna Lin Su",
+    byline: "Joanna Lin Su",
     chapters: [
       {
         id: "introduction",

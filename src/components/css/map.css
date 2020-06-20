@@ -1,51 +1,41 @@
 body, html {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  /* overflow-x: hidden; */
-} 
-body {
   overflow-x: hidden;
 }
 
 .chinese-contact-tracing {
   background: #222;
 }
-.chinese-contact-tracing nav {
-  color: #FFE8D1;
-}
+
 .chinese-contact-tracing main {
-  margin-bottom: 0;
+  margin: 0;
+  display: relative!important;
+}
+.chinese-contact-tracing nav {
+  display: none;
 }
 .chinese-contact-tracing footer {
   margin-top: 0;
 }
-.chinese-contact-tracing .hero-text {
-  grid-column: 2 / 16;
-  color: white;
-  min-height: 90vh;
-}
+
 
 .dark img {
   max-width: 100%;
 }
 
 .mapboxgl-map {
-  grid-column: 1 / 12;
   grid-row: 2;
   height: 100vh;
-  position: sticky!important;
-  position: -webkit-sticky!important;
+  position: fixed!important;
   top: 0;
-  overflow: visible;
+  width: 70%;
+  z-index: 0;
 }
 .mapboxgl-canvas {
   height: 80vh;
 }
 #story {
-  grid-column: 1 / 17;
   grid-row: 2 / 3;
+  width: 100vw;
   color: rgba(255,255,255,0.5);
   margin: 0 0 2rem;
 }
@@ -53,19 +43,23 @@ body {
   color: rgba(255,255,255,1);
 }
 #story #features {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(16, 1fr); */
   grid-column-gap: 0.4rem;
   grid-row-gap: 0.4rem;
 }
-.timeline {
-  grid-column: 12 / 17;
+#header {
+  color: #fff;
+  width: 26%;
+  z-index: 1;
+  margin: 0 2% 8rem 72%;
 }
 .story,
 .timeline {
-  grid-column: 12 / 17;
+  /* grid-column: 12 / 17; */
+  width: 26%;
   z-index: 1;
-  margin: 0 1rem 8rem;
+  margin: 0 2% 8rem 72%;
 }
 .story .title {
   background-color: #00008B;
@@ -82,18 +76,26 @@ body {
 
 @media (max-width: 768px) {
   .mapboxgl-map {
-    grid-column: 1 / 17;
     height: 50vh;
-    z-index: 2;
-    position: sticky !important;
+    position: fixed!important;
     top: 0;
+    width: 100%;
   }
   #story {
-    grid-column: 1 / 17;
+    width: 96vw;
     grid-row: 3;
-    margin-top: 2rem;
+    margin: 50vh 2vw 0;
+  }
+  #header {
+    width: 97vw;
+    margin: 0;
+  }
+  .storyCards {
+    width: 96vw;
+    margin: 0;
   }
   .story, .timeline {
-    grid-column: 1 / 17;
+    width: 96vw;
+    margin: 0 0 4rem;
   }
 }

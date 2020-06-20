@@ -9,7 +9,7 @@ body {
   font-family: 'Tamil MN', 'Lato','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: #FFE8D1;
   margin: 0;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
 }
 a {
   text-decoration: none; 
