@@ -22,7 +22,7 @@ const MapPage = ({ data }) => {
       <SEO
         title={`Chinese Contacting Tracing | Paused`}
         description={`In response to the lack of comprehensive coverage on non-western world's usages of the contact tracing apps systems, the story shows how China's massive surveillance with the QR health code system came into effect. It offers a chronologically ordered and geographically marked view to help readers understand the development of this system.`}
-        // image={post.Featured_image[0].url}
+        image={`https://dl.airtable.com/.attachments/c2fc5ca6bb69088ec7cdcb20b48c57a6/70506862/3.jpg`}
       />
 
       <Map {...config} />
