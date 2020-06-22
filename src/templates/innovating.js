@@ -16,14 +16,6 @@ const Template = ({ data }) => {
   const posts = data.categoryStories
   const otherCategories = data.categories
   
-  // const categories = []
-
-  // {otherCategories.nodes.map(({data}, index) => (
-  //   categories.push(data.Slug)
-  // ))}
-
-  // console.log(categories)
-  
   return (
     <Layout page={home.Slug}>
 
@@ -49,14 +41,9 @@ const Template = ({ data }) => {
 
       <div className="category-hero-links">
         <h4 className="category-hero-links-label">Stories</h4>
-        {
-          home.Slug == 'innovating' ?
-            <Link to='/chinese-contact-tracing'>
-              <h4>Chinese Contact Tracing</h4>
-            </Link>
-          :
-            null
-        }
+        <Link to='/chinese-contact-tracing'>
+          <h4>Chinese Contact Tracing</h4>
+        </Link>
         {posts.nodes.map(({data}, index) => (
           <Link to={data.Slug}>
             <h4>{data.Title}</h4>
@@ -73,74 +60,26 @@ const Template = ({ data }) => {
             .processSync(home.Body)
         }}
       />
-      
+
+      <p>test</p>
+
+      <Link className="category-promo" to='/chinese-contact-tracing/'>
+        <div className="category-promo-text left">
+          <h2 className="category-promo-title">Chinese Contact Tracing</h2>
+          <h4 className="category-promo-byline">Joanna Lin Su</h4>
+          <div>
+            In response to the lack of comprehensive coverage on non-western world's usages of the contact tracing apps systems, the story shows how China's massive surveillance with the QR health code system came into effect. It offers a chronologically ordered and geographically marked view to help readers understand the development of this system.
+          </div>
+        </div>
+        <div className="category-promo-image-wrapper right">
+          <img
+            className="category-promo-image"
+            src="https://dl.airtable.com/.attachments/c2fc5ca6bb69088ec7cdcb20b48c57a6/70506862/3.jpg"
+          />
+        </div>
+      </Link>
+
       {posts.nodes.map(({data}, index) => (
-        home.Slug == 'innovating' ? 
-          (
-            <Link className="category-promo" to='/chinese-contact-tracing/'>
-              <div className="category-promo-text left">
-                <h2 className="category-promo-title">Chinese Contact Tracing</h2>
-                <h4 className="category-promo-byline">Joanna Lin Su</h4>
-                <div>
-                  In response to the lack of comprehensive coverage on non-western world's usages of the contact tracing apps systems, the story shows how China's massive surveillance with the QR health code system came into effect. It offers a chronologically ordered and geographically marked view to help readers understand the development of this system.
-                </div>
-              </div>
-              <div className="category-promo-image-wrapper right">
-                <img
-                  className="category-promo-image"
-                  src="https://dl.airtable.com/.attachments/c2fc5ca6bb69088ec7cdcb20b48c57a6/70506862/3.jpg"
-                />
-              </div>
-            </Link>,
-
-            (index == 0 || index == 2) ?
-
-              <Link className="category-promo" to={data.Slug}>
-                <div className="category-promo-text left">
-                  <h2 className="category-promo-title">{data.Title}</h2>
-                  <h4 className="category-promo-byline">{data.Authors}</h4>
-                  <div
-                    className="category-promo-blurb"
-                    dangerouslySetInnerHTML={{
-                      __html: unified()
-                        .use(markdown)
-                        .use(html)
-                        .processSync(data.Blurb)
-                    }}
-                  />
-                </div>
-                <div className="category-promo-image-wrapper right">
-                  <img
-                    className="category-promo-image"
-                    src={data.Featured_image[0].url}
-                  />
-                </div>
-              </Link>
-            :
-              <Link className="category-promo" to={data.Slug}>
-                <div className="category-promo-image-wrapper left">
-                  <img
-                    className="category-promo-image"
-                    src={data.Featured_image[0].url}
-                  />
-                </div>
-                <div className="category-promo-text right">
-                  <h2 className="category-promo-title">{data.Title}</h2>
-                  <h4 className="category-promo-byline">{data.Authors}</h4>
-                  <div
-                    className="category-promo-blurb"
-                    dangerouslySetInnerHTML={{
-                      __html: unified()
-                        .use(markdown)
-                        .use(html)
-                        .processSync(data.Blurb)
-                    }}
-                  />
-                </div>
-              </Link>
-          )
-          :
-           
         (index == 0 || index == 2) ?
           <Link className="category-promo" to={data.Slug}>
             <div className="category-promo-text left">
@@ -185,10 +124,8 @@ const Template = ({ data }) => {
             />
           </div>
         </Link>
-      ))}
-      
-      {/* <CategoryPageRecirc /> */}
-      
+    ))}
+            
     </Layout>
   );
 };

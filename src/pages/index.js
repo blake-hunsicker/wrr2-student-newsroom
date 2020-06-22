@@ -23,10 +23,10 @@ const IndexPage = ({ data }) => {
       />
       
       <HomepageHero
-        featuredStoryImage={featuredPost.data.Featured_image[0].url}
-        featuredStoryURL={featuredPost.data.Slug}
-        featuredStoryByline={featuredPost.data.Authors}
-        featuredStoryTitle={featuredPost.data.Title}
+        featuredStoryImage='https://dl.airtable.com/.attachments/c2fc5ca6bb69088ec7cdcb20b48c57a6/70506862/3.jpg'
+        featuredStoryURL='/chinese-contact-tracing'
+        featuredStoryByline='Joanna Lin Su'
+        featuredStoryTitle='Chinese Contact Tracing'
       />
       
       <div className="article-promo">
