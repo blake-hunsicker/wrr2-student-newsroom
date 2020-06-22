@@ -157,7 +157,7 @@ function Chapter({id, num, theme, title, image, description, description2, descr
         "step";
 
     return (
-        <div id={id} className={[(`${ num === 1 ? 'story' : 'story' }`), classList].join(' ')}>
+        <div id={id} className={[(`${ num === 1 ? 'timeline' : 'story' }`), classList].join(' ')}>
             <div className={theme}>
                 { title &&
                     <h4 className="title">{title}</h4>

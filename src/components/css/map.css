@@ -76,7 +76,7 @@ body, html {
 
 @media (max-width: 768px) {
   .mapboxgl-map {
-    height: 50vh;
+    height: 40vh;
     position: fixed!important;
     top: 0;
     width: 100%;
@@ -84,7 +84,7 @@ body, html {
   #story {
     width: 96vw;
     grid-row: 3;
-    margin: 50vh 2vw 0;
+    margin: 60vh 2vw 0;
   }
   #header {
     width: 97vw;
